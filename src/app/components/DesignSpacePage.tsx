@@ -8,33 +8,33 @@ import {
 } from "@/app/components/ui/card";
 
 // Import images
-import simpleMaterialImg from "figma:asset/6362e389c8a728ae1830297b9ea9948f0cbca058.png";
-import materialTransformationImg from "figma:asset/743cf4dcf7721caf166e5433c9540a3ba94d4a53.png";
-import positionImg from "figma:asset/0a69474d8d9934ead49ce6e0738b0d47c5dbbe18.png";
-import positionGif from "figma:asset/cbd941ec692e49df8c68954722b917e3bcb36a12.png";
-import shapeImg from "figma:asset/dbbcb5a982e20362f164c7ed421dbf96643a7dc2.png";
-import surfaceImg from "figma:asset/29560b1f5730601bad807930f57e7350cf0f6e5d.png";
-import orientationImg from "figma:asset/211d508245369a7a427318129d924baccc2f1871.png";
-import sizeImg from "figma:asset/022343713b857f2cf80f3bdd2b94710b07a5dc5f.png";
-import cameraImg from "figma:asset/18aee70ec96df71ef68964d3d5a8d6cb9609d550.png";
-import lightingImg from "figma:asset/cd57dfcf04c44cf695118a5fad3cb54c65470f7f.png";
-import environmentImg from "figma:asset/5f96707deb1f75d22ddf5cdb32f563c99a77cf67.png";
-import stretchingImg from "figma:asset/92bf95632dcedf99383c25e7ffb8e1318be33e53.png";
-import twistImg from "figma:asset/6bd82f095f0e1c2cbf86db632a368f8e993bd1bf.png";
-import breakImg from "figma:asset/f55f1c33cb1c7616ac5384550188f0718c76e4ca.png";
+import simpleMaterialImg from "@/assets/6362e389c8a728ae1830297b9ea9948f0cbca058.png";
+import materialTransformationImg from "@/assets/743cf4dcf7721caf166e5433c9540a3ba94d4a53.png";
+import positionImg from "@/assets/0a69474d8d9934ead49ce6e0738b0d47c5dbbe18.png";
+import positionGif from "@/assets/cbd941ec692e49df8c68954722b917e3bcb36a12.png";
+import shapeImg from "@/assets/dbbcb5a982e20362f164c7ed421dbf96643a7dc2.png";
+import surfaceImg from "@/assets/29560b1f5730601bad807930f57e7350cf0f6e5d.png";
+import orientationImg from "@/assets/211d508245369a7a427318129d924baccc2f1871.png";
+import sizeImg from "@/assets/022343713b857f2cf80f3bdd2b94710b07a5dc5f.png";
+import cameraImg from "@/assets/18aee70ec96df71ef68964d3d5a8d6cb9609d550.png";
+import lightingImg from "@/assets/cd57dfcf04c44cf695118a5fad3cb54c65470f7f.png";
+import environmentImg from "@/assets/5f96707deb1f75d22ddf5cdb32f563c99a77cf67.png";
+import stretchingImg from "@/assets/92bf95632dcedf99383c25e7ffb8e1318be33e53.png";
+import twistImg from "@/assets/6bd82f095f0e1c2cbf86db632a368f8e993bd1bf.png";
+import breakImg from "@/assets/f55f1c33cb1c7616ac5384550188f0718c76e4ca.png";
 
 // Import category icons
-import spatialIcon from "figma:asset/807025439e3512ddcbee1acb29cee807ea3ba963.png";
-import geometryIcon from "figma:asset/e6567b13a22bef74e2bcc3704f4058b8667e5a0f.png";
-import materialIcon from "figma:asset/a87832e1d9a0e3d4a5a91d2d05e306233d49066d.png";
-import framingIcon from "figma:asset/ac31d7eba07b121d47b7d7987805167b71a70f50.png";
-import dataIcon from "figma:asset/efaefe177f5c5624d020d676197b98fbbd053b77.png";
-import timeIcon from "figma:asset/99e24b46429271e9a7a5e9d559a8a4f86af9a6e1.png";
-import realityIcon from "figma:asset/a6c675d7361c93dd0221d0e1e42f364ef7aeb5a0.png";
-import populationsIcon from "figma:asset/1bfde59c8d5983b550af28062669d50b6c7835d9.png";
-import biologicalIcon from "figma:asset/3d986b01b2fe3874d7a1f17a61c7e4080223400f.png";
-import physicsIcon from "figma:asset/a3b754cf6d2c146173c02f13c601e73d86609c8f.png";
-import structuralIcon from "figma:asset/a16e39052f17171d5b24a942543ea50d9e41f261.png";
+import spatialIcon from "@/assets/807025439e3512ddcbee1acb29cee807ea3ba963.png";
+import geometryIcon from "@/assets/e6567b13a22bef74e2bcc3704f4058b8667e5a0f.png";
+import materialIcon from "@/assets/a87832e1d9a0e3d4a5a91d2d05e306233d49066d.png";
+import framingIcon from "@/assets/ac31d7eba07b121d47b7d7987805167b71a70f50.png";
+import dataIcon from "@/assets/efaefe177f5c5624d020d676197b98fbbd053b77.png";
+import timeIcon from "@/assets/99e24b46429271e9a7a5e9d559a8a4f86af9a6e1.png";
+import realityIcon from "@/assets/a6c675d7361c93dd0221d0e1e42f364ef7aeb5a0.png";
+import populationsIcon from "@/assets/1bfde59c8d5983b550af28062669d50b6c7835d9.png";
+import biologicalIcon from "@/assets/3d986b01b2fe3874d7a1f17a61c7e4080223400f.png";
+import physicsIcon from "@/assets/a3b754cf6d2c146173c02f13c601e73d86609c8f.png";
+import structuralIcon from "@/assets/a16e39052f17171d5b24a942543ea50d9e41f261.png";
 
 interface DimensionCard {
   id: string;

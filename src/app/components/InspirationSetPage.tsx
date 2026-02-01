@@ -2,20 +2,20 @@ import { useState } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/app/components/ui/card";
 
 // Import inspiration images
-import subsurfaceScatteringImg from "figma:asset/128fa6591da907f09456e78a4a95019947be93db.png";
-import helixStructureImg from "figma:asset/b5f1c5effd6c57ab218089bdf7a6a1f09630cc9a.png";
-import molecularBlobsImg from "figma:asset/f805b4059ce5330a2df49dd9eda3c0926fff3f5d.png";
-import organicOrangeImg from "figma:asset/336a5292e0096f8665ad9ca8e439c3057e3c6165.png";
-import baconTextureImg from "figma:asset/e0a263db05036033c1bf379eae1f2b60424400bb.png";
-import lightingBlobsImg from "figma:asset/18aee70ec96df71ef68964d3d5a8d6cb9609d550.png";
-import environmentBlobsImg from "figma:asset/5f96707deb1f75d22ddf5cdb32f563c99a77cf67.png";
-import stretchingBlobsImg from "figma:asset/92bf95632dcedf99383c25e7ffb8e1318be33e53.png";
-import twistBlobsImg from "figma:asset/6bd82f095f0e1c2cbf86db632a368f8e993bd1bf.png";
-import breakBlobsImg from "figma:asset/f55f1c33cb1c7616ac5384550188f0718c76e4ca.png";
-import geometricConesImg from "figma:asset/9c2c24879ed6f48f72030c6064a18f68be68b975.png";
-import iridescentMeshImg from "figma:asset/56c32e458099cf339f51f9d8b1df644f85e43577.png";
-import glassSpheresImg from "figma:asset/755209d4011a863bc0248a6157709c8891eaa54d.png";
-import organicFlowerImg from "figma:asset/72034ea53217ca08e50745e459943ca7891c9287.png";
+import subsurfaceScatteringImg from "@/assets/128fa6591da907f09456e78a4a95019947be93db.png";
+import helixStructureImg from "@/assets/b5f1c5effd6c57ab218089bdf7a6a1f09630cc9a.png";
+import molecularBlobsImg from "@/assets/f805b4059ce5330a2df49dd9eda3c0926fff3f5d.png";
+import organicOrangeImg from "@/assets/336a5292e0096f8665ad9ca8e439c3057e3c6165.png";
+import baconTextureImg from "@/assets/e0a263db05036033c1bf379eae1f2b60424400bb.png";
+import lightingBlobsImg from "@/assets/18aee70ec96df71ef68964d3d5a8d6cb9609d550.png";
+import environmentBlobsImg from "@/assets/5f96707deb1f75d22ddf5cdb32f563c99a77cf67.png";
+import stretchingBlobsImg from "@/assets/92bf95632dcedf99383c25e7ffb8e1318be33e53.png";
+import twistBlobsImg from "@/assets/6bd82f095f0e1c2cbf86db632a368f8e993bd1bf.png";
+import breakBlobsImg from "@/assets/f55f1c33cb1c7616ac5384550188f0718c76e4ca.png";
+import geometricConesImg from "@/assets/9c2c24879ed6f48f72030c6064a18f68be68b975.png";
+import iridescentMeshImg from "@/assets/56c32e458099cf339f51f9d8b1df644f85e43577.png";
+import glassSpheresImg from "@/assets/755209d4011a863bc0248a6157709c8891eaa54d.png";
+import organicFlowerImg from "@/assets/72034ea53217ca08e50745e459943ca7891c9287.png";
 
 const inspirationItems = [
   {
