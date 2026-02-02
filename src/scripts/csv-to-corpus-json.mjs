@@ -74,10 +74,6 @@ function parseTags(tagsStr) {
     .filter(Boolean);
 }
 
-function dedupe(arr) {
-  return Array.from(new Set(arr));
-}
-
 const csvText = fs.readFileSync(INPUT, "utf8");
 const rows = parseCSV(csvText);
 
@@ -86,7 +82,7 @@ if (rows.length < 2) {
 }
 
 const header = rows[0].map(h => h.trim());
-const required = ["id","title","description","image","method_of_making","animation","perceptual_realism","tags","link"];
+const required = ["id","title","description","image","method_of_making","animation","perceptual_realism","encodings","contextual","mechanisms","link"];
 for (const key of required) {
   if (!header.includes(key)) {
     throw new Error(`Missing column "${key}". Found columns: ${header.join(", ")}`);
@@ -112,7 +108,10 @@ const items = rows.slice(1)
     const perceptual_realism = trimOrUndefined(r[idx.perceptual_realism]);
     const link = trimOrUndefined(r[idx.link]);
 
-    const tags = dedupe(parseTags(r[idx.tags]));
+    const encodings = parseTags(r[idx.encodings]);
+    const contextual = parseTags(r[idx.contextual]);
+    const mechanisms = parseTags(r[idx.mechanisms]);
+
 
     return {
       id,
@@ -122,7 +121,9 @@ const items = rows.slice(1)
       ...(method_of_making ? { method_of_making } : {}),
       ...(animation ? { animation } : {}),
       ...(perceptual_realism ? { perceptual_realism } : {}),
-      tags,
+      encodings,
+      contextual,
+      mechanisms,
       ...(link ? { link } : {}),
     };
   });

@@ -1,0 +1,65 @@
+[
+  {
+    "type": "inline",
+    "name": "Method of Making",
+    "options": ["3D", "Photo of Physicalization", "Graphic Design / Illustration"]
+  },
+  {
+    "type": "inline",
+    "name": "Animation",
+    "options": ["Static", "Dynamic"]
+  },
+  {
+    "type": "inline",
+    "name": "Perceptual Realism",
+    "options": ["Low Realism", "Intermediate Realism", "High Realism", "Indistinguishable from Reality"]
+  },
+  {
+    "type": "expandable",
+    "name": "Physical Attributes",
+    "subcategories": [
+      {
+        "name": "Spatial Attributes",
+        "options": ["Position", "Orientation", "Size"]
+      },
+      {
+        "name": "Geometry Attributes",
+        "options": ["Shape", "Surface"]
+      },
+      {
+        "name": "Material Attributes",
+        "options": ["Simple Materials", "Material Transformations"]
+      },
+      {
+        "name": "Structural Attributes",
+        "options": ["Stretching", "Twist", "Break / Shatter"]
+      },
+      {
+        "name": "Groups and Populations",
+        "options": ["Count", "Density", "Spatial Arrangement"]
+      },
+      {
+        "name": "Framing Attributes",
+        "options": ["Lighting", "Camera", "Environment"]
+      },
+      {
+        "name": "Time Attributes",
+        "options": ["Progression", "Speed", "Rhythm"]
+      }
+    ]
+  },
+  {
+    "type": "expandable",
+    "name": "Mechanisms",
+    "subcategories": [
+      {
+        "name": "Biological Mechanisms",
+        "options": ["Growth", "Decay", "Living Movement", "Infection", "Self-Organization & Patterns", "Life-Cycle Events"]
+      },
+      {
+        "name": "Physics & Chemical Mechanisms",
+        "options": ["Rigid-Body Mechanics", "Deformable Solid Mechanics", "Fluids", "Burning & Smoke", "Thermodynamics", "Force Fields & Particles", "Waves & Oscillations", "Optics", "Weathering"]
+      }
+    ]
+  }
+]

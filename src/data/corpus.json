@@ -6,11 +6,23 @@
     "image": "media/ex-001.png",
     "method_of_making": "3D",
     "animation": "Static",
-    "perceptual_realism": "High",
-    "tags": [
+    "perceptual_realism": "Low Realism",
+    "encodings": [
+      "Simple Materials",
       "Position",
       "Size",
-      "Shape"
+      "Shape",
+      "Position"
+    ],
+    "contextual": [
+      "Position",
+      "Position",
+      "Size",
+      "Shape",
+      "Position"
+    ],
+    "mechanisms": [
+      "Growth"
     ],
     "link": "https://www.behance.net/gallery/134157179/Data-Doodles-2021"
   },
@@ -21,10 +33,21 @@
     "image": "media/ex-002.png",
     "method_of_making": "Graphic Design / Illustration",
     "animation": "Static",
-    "perceptual_realism": "Intermediate",
-    "tags": [
+    "perceptual_realism": "Intermediate Realism",
+    "encodings": [
+      "Progression",
+      "Position",
+      "Size",
+      "Size"
+    ],
+    "contextual": [
       "Surface",
-      "Simple Materials"
+      "Simple Materials",
+      "Surface"
+    ],
+    "mechanisms": [
+      "Fluids",
+      "Fluids"
     ],
     "link": "https://www.stefanieposavec.com/airtransformed"
   },
@@ -35,10 +58,22 @@
     "image": "media/ex-003.png",
     "method_of_making": "Photo of Physicalization",
     "animation": "Dynamic",
-    "perceptual_realism": "Indistinguishable from Reality",
-    "tags": [
+    "perceptual_realism": "High Realism",
+    "encodings": [
+      "Twist",
+      "Lighting",
+      "Shape",
+      "Shape"
+    ],
+    "contextual": [
+      "Camera",
+      "Environment",
       "Camera",
       "Environment"
+    ],
+    "mechanisms": [
+      "Optics",
+      "Weathering"
     ],
     "link": "https://www.instagram.com/p/C0_sIkCNd8H/?img_index=2"
   },
@@ -46,616 +81,792 @@
     "id": "ex-004",
     "title": "Noway Norway",
     "image": "media/ex-004.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.behance.net/gallery/87757735/Chit-Chart?tracking_source=search_projects_featured_date%7Cinfographic#"
   },
   {
     "id": "ex-005",
     "title": "Garbage Dumps in the Ocean Type",
     "image": "media/ex-005.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://scicom-lab.com/project/explore-the-ocean"
   },
   {
     "id": "ex-006",
     "title": "Exporting Italian Men's Fashion",
     "image": "media/ex-006.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://infogra.ru/infographics/infografika-adriana-atta"
   },
   {
     "id": "ex-007",
     "title": "Rising Sea Levels",
     "image": "media/ex-007.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.behance.net/gallery/118410403/Rising-Sea-Levels-a-DataViz-Collaboration"
   },
   {
     "id": "ex-008",
     "title": "Nantes Metropole",
     "image": "media/ex-008.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "http://rokovoko.fr/realisations/la-cantine"
   },
   {
     "id": "ex-009",
     "title": "Municipal Expense",
     "image": "media/ex-009.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.behance.net/gallery/3565949/Municipal-expense"
   },
   {
     "id": "ex-010",
     "title": "Carbon Dioxide Savings",
     "image": "media/ex-010.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.visualcapitalist.com/emissions-change-fortune-500/"
   },
   {
     "id": "ex-011",
     "title": "Prosperity of Korean Medicine",
     "image": "media/ex-011.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.behance.net/gallery/165205971/Korean-Medicine-Blooms?tracking_source=search_projects|data+visualization&l=61"
   },
   {
     "id": "ex-012",
     "title": "Who Owns Helium",
     "image": "media/ex-012.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.voronoiapp.com/natural-resources/Who-Owns-Helium-6913"
   },
   {
     "id": "ex-013",
     "title": "Handmade Visualization Toolkit",
     "image": "media/ex-013.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://dataphys.org/list/jose-duartes-handmade-visualization-toolkit/"
   },
   {
     "id": "ex-014",
     "title": "The World�s Largest Merchant Marine Fleets",
     "image": "media/ex-014.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.voronoiapp.com/economy/The-Worlds-Largest-Merchant-Marine-Fleets--6770"
   },
   {
     "id": "ex-015",
     "title": "Pandemic and Creativity Report",
     "image": "media/ex-015.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.behance.net/gallery/109802031/Data-Illustrations-WePresent-Ideas-Report-2020"
   },
   {
     "id": "ex-016",
     "title": "Countries with Highest Amount of Vegetarians",
     "image": "media/ex-016.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.behance.net/gallery/82653729/Information-Design"
   },
   {
     "id": "ex-017",
     "title": "Average Salary in Ibero-American Territories",
     "image": "media/ex-017.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.instagram.com/p/CpJ3LzujLAZ/"
   },
   {
     "id": "ex-018",
     "title": "Life & Death",
     "image": "media/ex-018.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://blog.chloesilver.ca/2015/03/photorealistic-infographics.html"
   },
   {
     "id": "ex-019",
     "title": "Largest Labor Forces by Country",
     "image": "media/ex-019.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.voronoiapp.com/work/Ranked-Largest-Labor-Forces-by-Country-6912"
   },
   {
     "id": "ex-020",
     "title": "Materialism",
     "image": "media/ex-020.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://dataphys.org/list/materialism/"
   },
   {
     "id": "ex-021",
     "title": "Coral Reefs",
     "image": "media/ex-021.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://dataphys.org/list/coral-reefs/"
   },
   {
     "id": "ex-022",
     "title": "Dino Dinner",
     "image": "media/ex-022.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://chitchart.com/tags/dinner"
   },
   {
     "id": "ex-023",
     "title": "Dog Poo Picked Up per Month",
     "image": "media/ex-023.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.instagram.com/p/CB8thO2FaJX/"
   },
   {
     "id": "ex-024",
     "title": "Forest in Peace",
     "image": "media/ex-024.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://chitchart.com/tags/deforestation"
   },
   {
     "id": "ex-025",
     "title": "Cucumbers and Melons",
     "image": "media/ex-025.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.adsoftheworld.com/campaigns/cucumbers-and-melons"
   },
   {
     "id": "ex-026",
     "title": "Child Level of Difficulty",
     "image": "media/ex-026.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.instagram.com/p/C0gl7clNltU/"
   },
   {
     "id": "ex-027",
     "title": "Global Tree Cover Loss",
     "image": "media/ex-027.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.behance.net/gallery/82653729/Information-Design"
   },
   {
     "id": "ex-028",
     "title": "Your Phone Materials",
     "image": "media/ex-028.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.behance.net/gallery/14087701/Your-phone"
   },
   {
     "id": "ex-029",
     "title": "Which Economies Rely on International Trade",
     "image": "media/ex-029.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.voronoiapp.com/trade/Which-Economies-Rely-on-International-Trade-the-Most--6958"
   },
   {
     "id": "ex-030",
     "title": "Garbage Dumps in the Ocean Size",
     "image": "media/ex-030.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://scicom-lab.com/project/explore-the-ocean"
   },
   {
     "id": "ex-031",
     "title": "The Cost of Wind",
     "image": "media/ex-031.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.voronoiapp.com/energy/The-cost-of-wind-visualized-3275"
   },
   {
     "id": "ex-032",
     "title": "Haptics of wonder",
     "image": "media/ex-032.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://taica.co.jp/gel/collection/haptics/en/"
   },
   {
     "id": "ex-033",
     "title": "State of the World as Population Pyramids",
     "image": "media/ex-033.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.designboom.com/art/mathieu-lehanneur-state-world-population-aluminum-sculptures-art-basel-design-miami-09-26-2021/"
   },
   {
     "id": "ex-034",
     "title": "Company Value in the Stock Exchange",
     "image": "media/ex-034.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.behance.net/gallery/29565285/Guebretas-Annual-Report-2014"
   },
   {
     "id": "ex-035",
     "title": "Map of Corn Production Using Candy Corn",
     "image": "media/ex-035.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://dataphys.org/list/corn-production/"
   },
   {
     "id": "ex-036",
     "title": "Digital Pots",
     "image": "media/ex-036.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "http://www.keep-art.co.uk/digitial_sound.html"
   },
   {
     "id": "ex-037",
     "title": "Listening Cups",
     "image": "media/ex-037.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.timeatihanyi.com/listeningcups"
   },
   {
     "id": "ex-038",
     "title": "Automating Sustainability for the Venice Biennale",
     "image": "media/ex-038.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.heyhush.com/work/37-automating-sustainability-for-the-venice-biennale"
   },
   {
     "id": "ex-039",
     "title": "Time is Running Out 2",
     "image": "media/ex-039.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.realworldvisuals.com/rwv-projects/time-is-running-out"
   },
   {
     "id": "ex-040",
     "title": "Blaue Blumen: Handcrafted Offline Data Visualization of Population Density",
     "image": "media/ex-040.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://dataphys.org/list/blaue-blumen-handcrafted-offline-data-visualization-of-population-density/"
   },
   {
     "id": "ex-041",
     "title": "Visualizing Costco�s Global Presence",
     "image": "media/ex-041.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.voronoiapp.com/business/Visualizing-Costcos-Global-Presence-150"
   },
   {
     "id": "ex-042",
     "title": "Sea Risers",
     "image": "media/ex-042.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.jillhubley.com/project/searisers/"
   },
   {
     "id": "ex-043",
     "title": "Human Induced Farmland degradation",
     "image": "media/ex-043.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.voronoiapp.com/agriculture/Human-Induced-farmland-degradation-visualized-4542"
   },
   {
     "id": "ex-044",
     "title": "Rooms on the Market",
     "image": "media/ex-044.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.madevisual.co/rooms-on-the-market-global-vacancy-by-category/"
   },
   {
     "id": "ex-045",
     "title": "Who's Your Father Star Wars",
     "image": "media/ex-045.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://chitchart.com/chart/star-wars"
   },
   {
     "id": "ex-046",
     "title": "Most Airports Worldwide",
     "image": "media/ex-046.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://chitchart.com/chart/most-airports-worldwide"
   },
   {
     "id": "ex-047",
     "title": "What's in a phone?",
     "image": "media/ex-047.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.realworldvisuals.com/rwv-projects/whats-in-a-phone"
   },
   {
     "id": "ex-048",
     "title": "Time is Running Out 1",
     "image": "media/ex-048.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.realworldvisuals.com/rwv-projects/time-is-running-out"
   },
   {
     "id": "ex-049",
     "title": "Think Globally, Visualise Locally",
     "image": "media/ex-049.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.realworldvisuals.com/rwv-projects/think-globally-visualise-locally"
   },
   {
     "id": "ex-050",
     "title": "Coral Cities",
     "image": "media/ex-050.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.behance.net/gallery/184971485/Coral-Cities-Updated-Workflow-2023"
   },
   {
     "id": "ex-051",
     "title": "Make sense of it all: Mapping Movement",
     "image": "media/ex-051.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.behance.net/gallery/162831571/Make-sense-of-it-all-Mapping-Movement"
   },
   {
     "id": "ex-052",
     "title": "Where is My Bus Filling",
     "image": "media/ex-052.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.behance.net/gallery/184974961/TransitVizThursday-Innovative-Transit-DataViz"
   },
   {
     "id": "ex-053",
     "title": "Forestry Management Corruption",
     "image": "media/ex-053.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.behance.net/gallery/17843207/Forestry-3D-infographics?tracking_source=search_projects|3d+infographic&l=152"
   },
   {
     "id": "ex-054",
     "title": "Commuter Flowers",
     "image": "media/ex-054.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.behance.net/gallery/136828809/Commuter-Flowers"
   },
   {
     "id": "ex-055",
     "title": "World Wealth Distribution",
     "image": "media/ex-055.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.youtube.com/shorts/itRcmiAQRho"
   },
   {
     "id": "ex-056",
     "title": "Fibers",
     "image": "media/ex-056.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://variable.io/fibers/"
   },
   {
     "id": "ex-057",
     "title": "Cost of Living in LA",
     "image": "media/ex-057.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.behance.net/gallery/134157179/Data-Doodles-2021#"
   },
   {
     "id": "ex-058",
     "title": "The Gradient of Naturality",
     "image": "media/ex-058.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.behance.net/lavergneflor?tracking_source=for_you_logged_in_feed_recommended"
   },
   {
     "id": "ex-059",
     "title": "The Growing Problem of Mining Tailings",
     "image": "media/ex-059.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.voronoiapp.com/natural-resources/The-Growing-Problem-of-Mining-Tailings-Visualized-7024"
   },
   {
     "id": "ex-060",
     "title": "How much water do we consume in 70 years",
     "image": "media/ex-060.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.youtube.com/shorts/J8UtBisJsq0"
   },
   {
     "id": "ex-061",
     "title": "Transforming Literature to Architecture",
     "image": "media/ex-061.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.behance.net/gallery/27695559/EKPHRASIS-Transforming-Literature-to-Architecture"
   },
   {
     "id": "ex-062",
     "title": "Shenzhen Augmented Data Sculpture",
     "image": "media/ex-062.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.behance.net/gallery/140061345/Shenzhen-Augmented-Data-Sculpture?tracking_source=search_projects|procedural+data&l=10"
   },
   {
     "id": "ex-063",
     "title": "Memopod",
     "image": "media/ex-063.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.behance.net/gallery/111287371/Memopod?tracking_source=search_projects|procedural+data&l=2"
   },
   {
     "id": "ex-064",
     "title": "OG:CRYSTALS",
     "image": "media/ex-064.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://ogcrystals.com/"
   },
   {
     "id": "ex-065",
     "title": "Escape Velocity - Climate Series for Vox",
     "image": "media/ex-065.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.behance.net/gallery/224105907/Escape-Velocity-Climate-Series-for-Vox?tracking_source=search_projects|procedural+data&l=97"
   },
   {
     "id": "ex-066",
     "title": "Representation of the World Population",
     "image": "media/ex-066.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.youtube.com/shorts/uJjQDEVmr5Y"
   },
   {
     "id": "ex-067",
     "title": "Growth Speed Comparison of Common Plants",
     "image": "media/ex-067.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.instagram.com/p/DRctzDGCI4-/"
   },
   {
     "id": "ex-068",
     "title": "Star's Color and Temperature",
     "image": "media/ex-068.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.instagram.com/p/DR4assPCKUG/"
   },
   {
     "id": "ex-069",
     "title": "Fossil fuels - The rate we Use Them",
     "image": "media/ex-069.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.youtube.com/watch?v=CmR8zSE8k1I"
   },
   {
     "id": "ex-070",
     "title": "Rockslide Festival Activity",
     "image": "media/ex-070.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://variable.io/festival-activity/"
   },
   {
     "id": "ex-071",
     "title": "Metamorphose � Overgrowing Hate",
     "image": "media/ex-071.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.behance.net/gallery/138626999/metamorphose-overgrowing-hate?tracking_source=search_projects|data+sculpture&l=81"
   },
   {
     "id": "ex-072",
     "title": "Tallest Rocket Ever Built",
     "image": "media/ex-072.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.instagram.com/p/DRj52LlDVFX/"
   },
   {
     "id": "ex-073",
     "title": "Drowning in Plastic",
     "image": "media/ex-073.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.reuters.com/graphics/ENVIRONMENT-PLASTIC/0100B275155/"
   },
   {
     "id": "ex-074",
     "title": "How Many Planets Fit Inside the Sun",
     "image": "media/ex-074.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.instagram.com/p/DGimqdiNrD2/"
   },
   {
     "id": "ex-075",
     "title": "Animal Heartbeats",
     "image": "media/ex-075.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.youtube.com/watch?v=bjHDI3LkI5A"
   },
   {
     "id": "ex-076",
     "title": "Surreal Speed Comparison",
     "image": "media/ex-076.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.youtube.com/watch?v=Y-y3lYFAPQk"
   },
   {
     "id": "ex-077",
     "title": "Asteroids Size Comparison",
     "image": "media/ex-077.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.youtube.com/watch?v=p7HFxlm62As"
   },
   {
     "id": "ex-078",
     "title": "Births and Deaths Rate",
     "image": "media/ex-078.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.youtube.com/watch?v=bIAF7kBbGKk"
   },
   {
     "id": "ex-079",
     "title": "Elephant Rocket Fuel",
     "image": "media/ex-079.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.youtube.com/watch?v=X4iMeKif488"
   },
   {
     "id": "ex-080",
     "title": "Human Visits to Space",
     "image": "media/ex-080.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.instagram.com/p/DJB4PMriKLa/"
   },
   {
     "id": "ex-081",
     "title": "New York City's Greenhouse Gas Emissions",
     "image": "media/ex-081.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.youtube.com/watch?v=DtqSIplGXOA"
   },
   {
     "id": "ex-082",
     "title": "Number of deaths in the WW2",
     "image": "media/ex-082.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.youtube.com/watch?v=7cgRwDkP6vk"
   },
   {
     "id": "ex-083",
     "title": "Garbage Dumps in the Ocean Total",
     "image": "media/ex-083.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://scicom-lab.com/project/explore-the-ocean"
   },
   {
     "id": "ex-084",
     "title": "Visualizing the World�s Largest Cloud Service Providers",
     "image": "media/ex-084.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.voronoiapp.com/technology/Visualizing-the-Worlds-Largest-Cloud-Service-Providers-6444"
   },
   {
     "id": "ex-085",
     "title": "Europe's $2 Trillion Infrastructure Investment Deficit",
     "image": "media/ex-085.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.voronoiapp.com/economy/Charted-Europes-2-Trillion-Infrastructure-Investment-Deficit-5965"
   },
   {
     "id": "ex-086",
     "title": "Number of Satellites",
     "image": "media/ex-086.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.instagram.com/p/DKhMXuTKNk7/"
   },
   {
     "id": "ex-087",
     "title": "Planet Light Orbit",
     "image": "media/ex-087.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.instagram.com/p/DIy-jtaIEGX/"
   },
   {
     "id": "ex-088",
     "title": "How Many Moons",
     "image": "media/ex-088.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.instagram.com/p/DIlsIMCoaQo/"
   },
   {
     "id": "ex-089",
     "title": "Technology Garden - Matches",
     "image": "media/ex-089.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://variable.io/ibm-technology-garden/"
   },
   {
     "id": "ex-090",
     "title": "Technology Garden - Weather",
     "image": "media/ex-090.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://variable.io/ibm-technology-garden/"
   },
   {
     "id": "ex-091",
     "title": "Softness Simulation",
     "image": "media/ex-091.png",
-    "tags": [],
+    "encodings": [],
+    "contextual": [],
+    "mechanisms": [],
     "link": "https://www.youtube.com/shorts/ihwqYwqOAKM"
   }
 ]

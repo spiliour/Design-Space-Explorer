@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/app/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/app/components/ui/card";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 import corpusData from "@/data/corpus.json";
+import filterCategoriesData from "@/data/filterCategories.json";
 
 // ---- Corpus data (JSON-driven) ----
 type CorpusJsonRow = {
@@ -13,7 +14,9 @@ type CorpusJsonRow = {
   method_of_making?: string; // e.g. "3D"
   animation?: string; // e.g. "Static"
   perceptual_realism?: string; // e.g. "High Realism"
-  tags?: string[] | string; // array or semicolon-separated
+  encodings?: string[] | string; // array or semicolon-separated
+  contextual?: string[] | string; // array or semicolon-separated
+  mechanisms?: string[] | string; // array or semicolon-separated
   link?: string;
 };
 
@@ -22,7 +25,12 @@ type CorpusItem = {
   title: string;
   description: string;
   image?: string;
-  tags: string[];
+  method_of_making?: string;
+  animation?: string;
+  perceptual_realism?: string;
+  encodings: string[];
+  contextual: string[];
+  mechanisms: string[];
   link?: string;
 };
 
@@ -59,19 +67,22 @@ const normalizeTags = (tags?: string[] | string): string[] => {
 const uniq = (arr: string[]) => Array.from(new Set(arr));
 
 const corpusItems: CorpusItem[] = (corpusData as CorpusJsonRow[]).map((row, index) => {
-  const coreTags = normalizeTags(row.tags);
-  // Keep your existing filters working by folding these fields into tags too:
-  const extraTags = [row.method_of_making, row.animation, row.perceptual_realism]
-    .filter(Boolean)
-    .map(v => String(v).trim())
-    .filter(Boolean);
+  // Normalize each field separately
+  const encodingsList = normalizeTags(row.encodings);
+  const contextualList = normalizeTags(row.contextual);
+  const mechanismsList = normalizeTags(row.mechanisms);
 
   return {
     id: row.id ?? index + 1,
     title: row.title ?? `Example ${index + 1}`,
     description: row.description ?? "",
     image: row.image ? String(row.image).replace(/^\/+/, "") : undefined,
-    tags: uniq([...extraTags, ...coreTags]),
+    method_of_making: row.method_of_making,
+    animation: row.animation,
+    perceptual_realism: row.perceptual_realism,
+    encodings: encodingsList,
+    contextual: contextualList,
+    mechanisms: mechanismsList,
     link: row.link ? String(row.link).trim() : undefined,
   };
 });
@@ -98,71 +109,7 @@ interface ExpandableFilterCategory {
 
 type FilterCategory = InlineFilterCategory | ExpandableFilterCategory;
 
-const filterCategories: FilterCategory[] = [
-  {
-    type: "inline",
-    name: "Method of Making",
-    options: ["3D", "Photo of Physicalization", "Graphic Design / Illustration"]
-  },
-  {
-    type: "inline",
-    name: "Animation",
-    options: ["Static", "Dynamic"]
-  },
-  {
-    type: "inline",
-    name: "Perceptual Realism",
-    options: ["Low Realism", "Intermediate Realism", "High Realism", "Indistinguishable from Reality"]
-  },
-  {
-    type: "expandable",
-    name: "Physical Attributes",
-    subcategories: [
-      {
-        name: "Spatial Attributes",
-        options: ["Position", "Orientation", "Size"]
-      },
-      {
-        name: "Geometry Attributes",
-        options: ["Shape", "Surface"]
-      },
-      {
-        name: "Material Attributes",
-        options: ["Simple Materials", "Material Transformations"]
-      },
-      {
-        name: "Structural Attributes",
-        options: ["Stretching", "Twist", "Break / Shatter"]
-      },
-      {
-        name: "Groups and Populations",
-        options: ["Count", "Density", "Spatial Arrangement"]
-      },
-      {
-        name: "Framing Attributes",
-        options: ["Lighting", "Camera", "Environment"]
-      },
-      {
-        name: "Time Attributes",
-        options: ["Progression", "Speed", "Rhythm"]
-      }
-    ]
-  },
-  {
-    type: "expandable",
-    name: "Implied Physical Mechanisms",
-    subcategories: [
-      {
-        name: "Biological Mechanisms",
-        options: ["Growth", "Decay", "Living Movement", "Infection", "Self-Organization & Patterns", "Life-Cycle Events"]
-      },
-      {
-        name: "Physics & Chemical Mechanisms",
-        options: ["Rigid-Body Mechanics", "Deformable Solid Mechanics", "Fluids", "Burning & Smoke", "Thermodynamics", "Force Fields & Particles", "Waves & Oscillations", "Optics", "Weathering"]
-      }
-    ]
-  }
-];
+const filterCategories: FilterCategory[] = filterCategoriesData as FilterCategory[];
 
 export function CorpusPage() {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
@@ -202,12 +149,85 @@ export function CorpusPage() {
     }
   };
 
-  // Filter items based on selected tags
+  // Helper to count and sort tags by frequency
+  const countAndSortTags = (tags: string[]): Array<{ tag: string; count: number }> => {
+    const counts = tags.reduce((acc, tag) => {
+      acc[tag] = (acc[tag] || 0) + 1;
+      return acc;
+    }, {} as Record<string, number>);
+
+    return Object.entries(counts)
+      .map(([tag, count]) => ({ tag, count }))
+      .sort((a, b) => b.count - a.count); // Sort by count descending
+  };
+
+  // Helper to process item data for display
+  const processItem = (item: CorpusItem) => {
+    return {
+      encodings: countAndSortTags(item.encodings),
+      contextual: countAndSortTags(item.contextual),
+      mechanisms: countAndSortTags(item.mechanisms),
+    };
+  };
+
+  // Filter items based on selected tags with AND/OR logic
   const filteredItems = selectedTags.length === 0
     ? corpusItems
-    : corpusItems.filter(item => 
-        selectedTags.some(tag => item.tags.includes(tag))
-      );
+    : corpusItems.filter(item => {
+        // Categorize selected tags
+        const selectedMethodOfMaking = selectedTags.filter(tag =>
+          ["3D", "Photo of Physicalization", "Graphic Design / Illustration"].includes(tag)
+        );
+        const selectedAnimation = selectedTags.filter(tag =>
+          ["Static", "Dynamic"].includes(tag)
+        );
+        const selectedPerceptualRealism = selectedTags.filter(tag =>
+          ["Low Realism", "Intermediate Realism", "High Realism", "Indistinguishable from Reality"].includes(tag)
+        );
+        const selectedPhysicalAttrs = selectedTags.filter(tag => {
+          const physicalCategory = filterCategories
+            .find(cat => cat.type === "expandable" && cat.name === "Physical Attributes");
+          const physicalOptions = physicalCategory && physicalCategory.type === "expandable"
+            ? physicalCategory.subcategories.flatMap(sub => sub.options)
+            : [];
+          return physicalOptions.includes(tag);
+        });
+        const selectedMechanisms = selectedTags.filter(tag => {
+          const mechanismCategory = filterCategories
+            .find(cat => cat.type === "expandable" && cat.name === "Mechanisms");
+          const mechanismOptions = mechanismCategory && mechanismCategory.type === "expandable"
+            ? mechanismCategory.subcategories.flatMap(sub => sub.options)
+            : [];
+          return mechanismOptions.includes(tag);
+        });
+
+        // Check each category with appropriate logic
+        const itemPhysicalAttrs = [...item.encodings, ...item.contextual];
+
+        // Method of Making: OR logic (match any if selected)
+        const matchesMethodOfMaking = selectedMethodOfMaking.length === 0 ||
+          selectedMethodOfMaking.includes(item.method_of_making || "");
+
+        // Animation: OR logic (match any if selected)
+        const matchesAnimation = selectedAnimation.length === 0 ||
+          selectedAnimation.includes(item.animation || "");
+
+        // Perceptual Realism: OR logic (match any if selected)
+        const matchesPerceptualRealism = selectedPerceptualRealism.length === 0 ||
+          selectedPerceptualRealism.includes(item.perceptual_realism || "");
+
+        // Physical Attributes: AND logic (must have all selected)
+        const matchesPhysicalAttrs = selectedPhysicalAttrs.length === 0 ||
+          selectedPhysicalAttrs.every(tag => itemPhysicalAttrs.includes(tag));
+
+        // Mechanisms: AND logic (must have all selected)
+        const matchesMechanisms = selectedMechanisms.length === 0 ||
+          selectedMechanisms.every(tag => item.mechanisms.includes(tag));
+
+        // AND logic between categories
+        return matchesMethodOfMaking && matchesAnimation && matchesPerceptualRealism &&
+               matchesPhysicalAttrs && matchesMechanisms;
+      });
 
   return (
     <div className="max-w-screen-2xl mx-auto px-6 py-12">
@@ -353,25 +373,12 @@ export function CorpusPage() {
       {/* Cards Grid */}
       <div className="grid gap-6 justify-center [grid-template-columns:repeat(auto-fit,350px)]">
         {filteredItems.map((item) => {
-          const clickable = Boolean(item.link);
+          const processed = processItem(item);
 
           return (
             <Card
               key={item.id}
-              className={[
-                "hover:border-foreground transition-colors",
-                clickable ? "cursor-pointer" : "cursor-default",
-              ].join(" ")}
-              onClick={() => clickable && window.open(item.link!, "_blank", "noopener,noreferrer")}
-              role={clickable ? "link" : undefined}
-              tabIndex={clickable ? 0 : -1}
-              onKeyDown={(e) => {
-                if (!clickable) return;
-                if (e.key === "Enter" || e.key === " ") {
-                  e.preventDefault();
-                  window.open(item.link!, "_blank", "noopener,noreferrer");
-                }
-              }}
+              className="hover:border-foreground transition-colors flex flex-col shadow-md"
             >
               <CardHeader>
                 <div className="aspect-[4/3] bg-muted rounded mb-4 flex items-center justify-center text-muted-foreground text-sm overflow-hidden">
@@ -389,14 +396,112 @@ export function CorpusPage() {
                 <CardTitle>{item.title}</CardTitle>
               </CardHeader>
 
-              <CardContent>
-                <CardDescription className="mb-4">{item.description}</CardDescription>
-                <div className="flex flex-wrap gap-2">
-                  {item.tags.map((tag) => (
-                    <span key={tag} className="inline-block px-2 py-1 bg-muted text-xs rounded">
-                      {tag}
-                    </span>
-                  ))}
+              <CardContent className="flex-1 flex flex-col">
+                <div className="flex-1 space-y-3 mb-4">
+                  {/* First row: Method of Making - Animation - Perceptual Realism */}
+                  <div className="flex flex-wrap gap-2">
+                    {item.method_of_making && (
+                      <span className={`inline-block px-3 py-1 text-xs rounded-full ${
+                        selectedTags.includes(item.method_of_making)
+                          ? "bg-black text-white"
+                          : "bg-muted"
+                      }`}>
+                        {item.method_of_making}
+                      </span>
+                    )}
+                    {item.animation && (
+                      <span className={`inline-block px-3 py-1 text-xs rounded-full ${
+                        selectedTags.includes(item.animation)
+                          ? "bg-black text-white"
+                          : "bg-muted"
+                      }`}>
+                        {item.animation}
+                      </span>
+                    )}
+                    {item.perceptual_realism && (
+                      <span className={`inline-block px-3 py-1 text-xs rounded-full ${
+                        selectedTags.includes(item.perceptual_realism)
+                          ? "bg-black text-white"
+                          : "bg-muted"
+                      }`}>
+                        {item.perceptual_realism}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Encodings */}
+                  {processed.encodings.length > 0 && (
+                    <div className="flex flex-wrap gap-2 items-center">
+                      <span className="text-xs font-medium text-muted-foreground">Encodings:</span>
+                      {processed.encodings.map((tagItem) => (
+                        <span
+                          key={tagItem.tag}
+                          className={`inline-block px-3 py-1 text-xs rounded-full ${
+                            selectedTags.includes(tagItem.tag)
+                              ? "bg-black text-white"
+                              : "bg-muted"
+                          }`}
+                        >
+                          {tagItem.tag}{tagItem.count > 1 && ` (x${tagItem.count})`}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Contextual */}
+                  {processed.contextual.length > 0 && (
+                    <div className="flex flex-wrap gap-2 items-center">
+                      <span className="text-xs font-medium text-muted-foreground">Contextual:</span>
+                      {processed.contextual.map((tagItem) => (
+                        <span
+                          key={tagItem.tag}
+                          className={`inline-block px-3 py-1 text-xs rounded-full ${
+                            selectedTags.includes(tagItem.tag)
+                              ? "bg-black text-white"
+                              : "bg-muted"
+                          }`}
+                        >
+                          {tagItem.tag}{tagItem.count > 1 && ` (x${tagItem.count})`}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Mechanisms */}
+                  {processed.mechanisms.length > 0 && (
+                    <div className="flex flex-wrap gap-2 items-center">
+                      <span className="text-xs font-medium text-muted-foreground">Mechanisms:</span>
+                      {processed.mechanisms.map((tagItem) => (
+                        <span
+                          key={tagItem.tag}
+                          className={`inline-block px-3 py-1 text-xs rounded-full ${
+                            selectedTags.includes(tagItem.tag)
+                              ? "bg-black text-white"
+                              : "bg-muted"
+                          }`}
+                        >
+                          {tagItem.tag}{tagItem.count > 1 && ` (x${tagItem.count})`}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex gap-2 mt-auto">
+                  {item.link && (
+                    <button
+                      onClick={() => window.open(item.link!, "_blank", "noopener,noreferrer")}
+                      className="flex-1 px-3 py-1.5 bg-zinc-950 hover:bg-zinc-800 text-white rounded text-xs font-medium transition-colors flex items-center justify-center gap-1.5"
+                    >
+                      <span>🔗</span> Link
+                    </button>
+                  )}
+                  <button
+                    className="flex-1 px-3 py-1.5 bg-zinc-950 hover:bg-zinc-800 text-white rounded text-xs font-medium transition-colors"
+                  >
+                    Open coding
+                  </button>
                 </div>
               </CardContent>
             </Card>

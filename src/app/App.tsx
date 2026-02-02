@@ -30,13 +30,13 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       <Navigation activeTab={activeTab} onTabChange={setActiveTab} />
-      <main>{renderPage()}</main>
+      <main className="flex-1">{renderPage()}</main>
       {activeTab !== "design-space" && (
-        <footer className="border-t border-border mt-20">
-          <div className="max-w-7xl mx-auto px-6 py-8 text-center text-sm text-muted-foreground">
-            <p>Physically-inspired Visualization Explorer</p>
+        <footer className="border-t border-border mt-20 bg-slate-800">
+          <div className="max-w-7xl mx-auto px-6 py-8 text-center text-sm text-white">
+            {/* Footer content can be added here if needed */}
           </div>
         </footer>
       )}

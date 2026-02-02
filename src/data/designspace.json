@@ -1,0 +1,715 @@
+{
+  "schema_version": 1,
+  "categories": [
+    {
+      "category": "Visual Elements",
+      "order": 1,
+      "dimensions": [
+        {
+          "id": "element-type",
+          "label": "Element Type",
+          "color": "#f06951",
+          "icon": "icons/element.png",
+          "order": 1,
+          "cards": [
+            {
+              "id": "mark",
+              "title": "Mark",
+              "description": "An atomic element that supports data encodings. It can do so directly, when its own visual properties map to data.",
+              "details": [
+                "Supports data encodings directly or indirectly",
+                "Functions as a unit within a Collection",
+                "Data mapping occurs at mark or collection level"
+              ],
+              "example": "ex-013",
+              "order": 1
+            },
+            {
+              "id": "collection",
+              "title": "Collection",
+              "description": "A meaningful grouping of marks or collections that encodes data.",
+              "details": [
+                "Groups marks or other collections",
+                "The grouping itself encodes data",
+                "Creates hierarchical structures"
+              ],
+              "example": "ex-005",
+              "order": 2
+            },
+            {
+              "id": "annotation",
+              "title": "Annotation",
+              "description": "A non-encoding element that explicitly attaches to a target to explain, emphasize, or direct attention.",
+              "details": [
+                "Attaches to marks, collections, or guides",
+                "Non-encoding element",
+                "Can be shapes, highlights, or images"
+              ],
+              "example": "ex-084",
+              "order": 3
+            },
+            {
+              "id": "guide",
+              "title": "Guide",
+              "description": "A non-encoding element that supports interpretation of the scale of the encodings.",
+              "details": [
+                "Axes, legends, or anchor elements",
+                "Provides reference by comparison",
+                "Supports scale interpretation"
+              ],
+              "example": "ex-010",
+              "order": 4
+            },
+            {
+              "id": "decoration",
+              "title": "Decoration",
+              "description": "A non-encoding element that supports interpretation of the context of the dataset or message.",
+              "details": [
+                "Supports context and message",
+                "Can be removed without affecting data reading"
+              ],
+              "example": "ex-015",
+              "order": 5
+            },
+            {
+              "id": "scene",
+              "title": "Scene",
+              "description": "An atomic element that supports data encodings. It can do so directly, when its own visual properties map to data.",
+              "details": [
+                "Supports data encodings directly or indirectly",
+                "Functions as a unit within a Collection",
+                "Functions as a unit within a Collection",
+                "Data mapping occurs at mark or collection level"
+              ],
+              "example": "ex-081",
+              "order": 6
+            }
+          ]
+        },
+        {
+          "id": "element-hierarchy",
+          "label": "Element Hierarchy",
+          "color": "#f06951",
+          "icon": "icons/hierarchy.png",
+          "order": 2,
+          "cards": [
+            {
+              "id": "level-1",
+              "title": "Level 1",
+              "description": "Individual Marks (atomic items/links)",
+              "details": [
+                "Atomic level elements",
+                "Individual marks",
+                "Base building blocks"
+              ],
+              "order": 1
+            },
+            {
+              "id": "level-2",
+              "title": "Level 2",
+              "description": "A Collection of Level-1 items (first grouping)",
+              "details": [
+                "First grouping of marks",
+                "Collection of atomic elements",
+                "Creates initial hierarchy"
+              ],
+              "order": 2
+            },
+            {
+              "id": "level-3-5",
+              "title": "Level 3-5",
+              "description": "Nested groupings (Collection of Collections, etc.)",
+              "details": [
+                "Multiple levels of nesting",
+                "Collections of collections",
+                "Complex hierarchical structures"
+              ],
+              "order": 3
+            },
+            {
+              "id": "no-hierarchy",
+              "title": "No Hierarchy",
+              "description": "Element applies to the entire visualization (e.g., global background)",
+              "details": [
+                "Applies globally",
+                "No specific level assignment",
+                "Whole-scene elements"
+              ],
+              "order": 4
+            }
+          ]
+        },
+        {
+          "id": "metaphorical-proximity-to-data",
+          "label": "Metaphorical Proximity to Data",
+          "color": "#f06952",
+          "icon": "icons/data.png",
+          "order": 3,
+          "cards": [
+            {
+              "id": "low-proximity-symbolic",
+              "title": "Low Proximity (Symbolic)",
+              "description": "The visual element does not resemble the associated data/theme, the connection must be learned from conventions.",
+              "details": [
+                "No resemblance to data",
+                "Requires learned conventions",
+                "Abstract relationship"
+              ],
+              "order": 1
+            },
+            {
+              "id": "intermediate-proximity-iconic",
+              "title": "Intermediate Proximity (Iconic)",
+              "description": "The visual element shares some similar qualities or resembles in an intuitive way the associated data/theme.",
+              "details": [
+                "Shares similar qualities",
+                "Intuitive resemblance",
+                "Some visual connection"
+              ],
+              "order": 2
+            },
+            {
+              "id": "high-proximity-literal",
+              "title": "High Proximity (Literal)",
+              "description": "The visual element is closely (physically/causally) connected to the data/theme.",
+              "details": [
+                "Close physical connection",
+                "Causal relationship",
+                "Direct representation"
+              ],
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "metaphorical-proximity-to-reality",
+          "label": "Metaphorical Proximity to Reality",
+          "color": "#f06953",
+          "icon": "icons/reality.png",
+          "order": 4,
+          "cards": [
+            {
+              "id": "low-proximity-slightly-familiar",
+              "title": "Low Proximity (Slightly Familiar)",
+              "description": "The visual element is only slightly familiar / feels more abstract or unfamiliar.",
+              "details": [
+                "Abstract feeling",
+                "Unfamiliar to most",
+                "Limited real-world connection"
+              ],
+              "order": 1
+            },
+            {
+              "id": "intermediate-proximity-moderately-familiar",
+              "title": "Intermediate Proximity (Moderately Familiar)",
+              "description": "The visual element is moderately familiar.",
+              "details": [
+                "Some familiarity",
+                "Known but not common",
+                "Moderate recognition"
+              ],
+              "order": 2
+            },
+            {
+              "id": "high-proximity-very-familiar",
+              "title": "High Proximity (Very Familiar)",
+              "description": "The visual element is very familiar from everyday experience.",
+              "details": [
+                "Everyday experience",
+                "Highly recognizable",
+                "Strong real-world knowledge"
+              ],
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Physical Attributes",
+      "order": 2,
+      "dimensions": [
+        {
+          "id": "spatial-attributes",
+          "label": "Spatial Attirbutes",
+          "color": "#3f4adb",
+          "icon": "icons/spatial.png",
+          "order": 1,
+          "cards": [
+            {
+              "id": "position",
+              "title": "Position",
+              "description": "The object's location within the composition.",
+              "details": [],
+              "image": "design_space_static/position.png",
+              "example": "ex-002",
+              "order": 1
+            },
+            {
+              "id": "orientation",
+              "title": "Orientation",
+              "description": "The angular rotation or facing direction of an object.",
+              "details": [],
+              "image": "design_space_static/orientation.png",
+              "example": "ex-089",
+              "order": 2
+            },
+            {
+              "id": "size",
+              "title": "Size",
+              "description": "The size of an object, which can be in length, surface or volume.",
+              "details": [],
+              "image": "design_space_static/size.png",
+              "example": "ex-077",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "geometry-attributes",
+          "label": "Geometry Attributes",
+          "color": "#3f4adb",
+          "icon": "icons/geometry.png",
+          "order": 2,
+          "cards": [
+            {
+              "id": "shape",
+              "title": "Shape",
+              "description": "The geometry's overall shape. It can be a recognizable shape (e.g. a star or a hand) or an abstract one.",
+              "details": [],
+              "image": "design_space_static/shape.png",
+              "example": "ex-004",
+              "order": 1
+            },
+            {
+              "id": "surface",
+              "title": "Surface",
+              "description": "Data is mapped to localized deformations on the object's surface, such as bumps, folds or extrusions.",
+              "details": [],
+              "image": "design_space_static/surface.png",
+              "example": "ex-036",
+              "order": 2
+            }
+          ]
+        },
+        {
+          "id": "material-attributes",
+          "label": "Material Attributes",
+          "color": "#3f4adb",
+          "icon": "icons/material.png",
+          "order": 3,
+          "cards": [
+            {
+              "id": "simple-materials",
+              "title": "Simple Materials",
+              "description": "Clearly separated materials applied to different areas or objects, often indicating distinct categories.",
+              "details": [],
+              "image": "design_space_static/material.png",
+              "example": "ex-031",
+              "order": 1
+            },
+            {
+              "id": "material-transformations",
+              "title": "Material Transformations",
+              "description": "From isolated material changes to complex changes that communicate physical processes.",
+              "details": [],
+              "image": "design_space_static/transformations.png",
+              "example": "ex-001",
+              "order": 2
+            }
+          ]
+        },
+        {
+          "id": "structural-attributes",
+          "label": "Structural Attributes",
+          "color": "#3f4adb",
+          "icon": "icons/structural.png",
+          "order": 4,
+          "cards": [
+            {
+              "id": "stretching",
+              "title": "Stretching",
+              "description": "Extension or elongation of an object's form.",
+              "details": [],
+              "image": "design_space_static/stretch.png",
+              "example": "ex-029",
+              "order": 1
+            },
+            {
+              "id": "twist",
+              "title": "Twist",
+              "description": "Rotational deformation along an axis.",
+              "details": [],
+              "image": "design_space_static/twist.png",
+              "order": 2
+            },
+            {
+              "id": "break-shatter",
+              "title": "Break / Shatter",
+              "description": "Fragmentation into separate pieces.",
+              "details": [],
+              "image": "design_space_static/breaking.png",
+              "order": 3
+            },
+            {
+              "id": "fold-unfold",
+              "title": "Fold / Unfold",
+              "details": [],
+              "example": "ex-023",
+              "order": 999
+            },
+            {
+              "id": "inflate-deflate",
+              "title": "Inflate / Deflate",
+              "details": [],
+              "image": "design_space_static/inflate.png",
+              "order": 999
+            },
+            {
+              "id": "segment-cut",
+              "title": "Segment / Cut",
+              "details": [],
+              "example": "ex-004",
+              "order": 999
+            }
+          ]
+        },
+        {
+          "id": "groups-and-populations",
+          "label": "Groups & Populations",
+          "color": "#3f4adb",
+          "icon": "icons/populations.png",
+          "order": 5,
+          "cards": [
+            {
+              "id": "count",
+              "title": "Count",
+              "description": "Focus is on the number of objects that make up the population.",
+              "details": [],
+              "example": "ex-073",
+              "order": 1
+            },
+            {
+              "id": "density",
+              "title": "Density",
+              "description": "Focus is on how closely or widely the objects are distributed.",
+              "details": [],
+              "example": "ex-086",
+              "order": 2
+            },
+            {
+              "id": "spatial-arrangement",
+              "title": "Spatial Arrangement",
+              "description": "The spatial arrangement or topological patterns applied to objects inside the population.",
+              "details": [],
+              "image": "design_space_static/arrangement.png",
+              "example": "ex-006",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "framing-attributes",
+          "label": "Framing Attributes",
+          "color": "#3f4adb",
+          "icon": "icons/framing.png",
+          "order": 6,
+          "cards": [
+            {
+              "id": "lighting",
+              "title": "Lighting",
+              "description": "Light sources and illumination affecting the scene.",
+              "details": [],
+              "image": "design_space_static/lighting.png",
+              "example": "ex-077",
+              "order": 1
+            },
+            {
+              "id": "camera",
+              "title": "Camera",
+              "description": "Point of view, angle, lens distortion.",
+              "details": [],
+              "image": "design_space_static/camera2.png",
+              "example": "ex-060",
+              "order": 2
+            },
+            {
+              "id": "environment",
+              "title": "Environment",
+              "description": "Spatial and contextual elements surrounding a subject.",
+              "details": [],
+              "image": "design_space_static/environment.png",
+              "example": "ex-076",
+              "order": 3
+            }
+          ]
+        },
+        {
+          "id": "time-attributes",
+          "label": "Time Attributes",
+          "color": "#3f4adb",
+          "icon": "icons/progression.png",
+          "order": 7,
+          "cards": [
+            {
+              "id": "progression",
+              "title": "Progression",
+              "description": "Sequential changes over time, showing stages or phases of development.",
+              "details": [],
+              "example": "ex-072",
+              "order": 1
+            },
+            {
+              "id": "speed",
+              "title": "Speed",
+              "description": "The rate of change or motion, representing velocity or pace.",
+              "details": [],
+              "example": "ex-087",
+              "order": 2
+            },
+            {
+              "id": "rhythm",
+              "title": "Rhythm",
+              "description": "Periodic or recurring patterns in time, creating temporal structure.",
+              "details": [],
+              "example": "ex-075",
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Attribute Dimensions",
+      "order": 3,
+      "dimensions": [
+        {
+          "id": "attribute-function",
+          "label": "Attribute Function",
+          "color": "#d494ff",
+          "icon": "icons/function.png",
+          "order": 1,
+          "cards": [
+            {
+              "id": "data-encoding-attirbute",
+              "title": "Data-Encoding Attirbute",
+              "description": "The attribute’s value maps to a data variable. As a secondary purpose the attribute may also provide context in the same way as a contextual attribute does.",
+              "details": [],
+              "order": 1
+            },
+            {
+              "id": "contextual-attribute",
+              "title": "Contextual Attribute",
+              "description": "The attribute does not map to data; its primary purpose is to provide context, theme, realism, or narrative tone. Functionally equivalent to Decoration, but embedded within another element.",
+              "details": [],
+              "order": 2
+            }
+          ]
+        },
+        {
+          "id": "motion",
+          "label": "Motion",
+          "color": "#d494ff",
+          "icon": "icons/motion.png",
+          "order": 2,
+          "cards": [
+            {
+              "id": "static",
+              "title": "Static",
+              "description": "The physical attribute is static.",
+              "details": [],
+              "order": 1
+            },
+            {
+              "id": "dynamic",
+              "title": "Dynamic",
+              "description": "The physical attribute is dynamic.",
+              "details": [],
+              "order": 2
+            }
+          ]
+        },
+        {
+          "id": "semantic-congruence",
+          "label": "Semantic Congruence",
+          "color": "#d494ff",
+          "icon": "icons/congruence.png",
+          "order": 3,
+          "cards": [
+            {
+              "id": "weak-congruence",
+              "title": "Weak Congruence",
+              "description": "There is a weak semantic congruence between the data variable and the representation.",
+              "details": [],
+              "order": 1
+            },
+            {
+              "id": "intermediate-congruence",
+              "title": "Intermediate Congruence",
+              "description": "There is an intermediate semantic congruence between the data variable and the representation.",
+              "details": [],
+              "order": 2
+            },
+            {
+              "id": "strong-congruence",
+              "title": "Strong Congruence",
+              "description": "There is a strong semantic connection between the data variable and the representation.",
+              "details": [],
+              "order": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Physical Mechanisms",
+      "order": 4,
+      "dimensions": [
+        {
+          "id": "biological-mechanisms",
+          "label": "Biological Mechanisms",
+          "color": "#436d41",
+          "icon": "icons/biological.png",
+          "order": 1,
+          "cards": [
+            {
+              "id": "growth",
+              "title": "Growth",
+              "description": "Structures that emerge, enlarge, branch, or differentiate over time.",
+              "details": [],
+              "example": "ex-067",
+              "order": 1
+            },
+            {
+              "id": "decay",
+              "title": "Decay",
+              "description": "Degradation caused by breakdown, death, or deterioration of living matter.",
+              "details": [],
+              "example": "ex-021",
+              "order": 2
+            },
+            {
+              "id": "living-movement",
+              "title": "Living Movement",
+              "description": "Movement caused by internal, biological processes.",
+              "details": [],
+              "example": "ex-076",
+              "order": 3
+            },
+            {
+              "id": "respiration-rhythms",
+              "title": "Respiration & Rhythms",
+              "description": "Periodic, life-like oscillations that convey internal cycles of living systems. Examples: “breathing”,  pulse/heartbeat dilations, tremor or “shaking”, bioluminescent pulsing.",
+              "details": [],
+              "example": "ex-075",
+              "order": 4
+            },
+            {
+              "id": "infection",
+              "title": "Infection",
+              "description": "Spread of living agents across an object or host. Examples: mold / mycelium, bacterial growth on a surface, moss / lichen.",
+              "details": [],
+              "example": "ex-018",
+              "order": 5
+            },
+            {
+              "id": "self-organization-patterns",
+              "title": "Self-Organization & Patterns",
+              "description": "Pattern formation or coordinated behavior arising from local interactions among many simple units, without centralized control. Examples: flocking / swarming, Turing patterns, phyllotaxis packing.",
+              "details": [],
+              "example": "ex-071",
+              "order": 6
+            },
+            {
+              "id": "life-cycle-events",
+              "title": "Life-Cycle Events",
+              "description": "Biological stage transitions that change appearance, structure, or function. Examples: germination, metamorphosis, flowering / fruiting / seeding.",
+              "details": [],
+              "example": "ex-090",
+              "order": 7
+            }
+          ]
+        },
+        {
+          "id": "physics-chemical-mechanisms",
+          "label": "Physics & Chemical Mechanisms",
+          "color": "#436d41",
+          "icon": "icons/physics.png",
+          "order": 2,
+          "cards": [
+            {
+              "id": "rigid-body-mechanics",
+              "title": "Rigid-Body Mechanics",
+              "description": "Motion of bodies treated as undeformable solids under forces, constraints, and collisions.",
+              "details": [],
+              "example": "ex-055",
+              "order": 1
+            },
+            {
+              "id": "deformable-solid-mechanics",
+              "title": "Deformable Solid Mechanics",
+              "description": "Shape changes and fracture of solids under stress, including elastic and plastic deformation.",
+              "details": [],
+              "example": "ex-091",
+              "order": 2
+            },
+            {
+              "id": "fluids",
+              "title": "Fluids",
+              "description": "Phenomena related to liquid and gaseous flows, including diffusion and mixing phenomena.",
+              "details": [],
+              "example": "ex-069",
+              "order": 3
+            },
+            {
+              "id": "burning-smoke",
+              "title": "Burning & Smoke",
+              "description": "Oxidation-driven emission and transformation of matter producing flames or smoke.",
+              "details": [],
+              "order": 4
+            },
+            {
+              "id": "state-change",
+              "title": "State Change",
+              "description": "Appearance and shape changes caused by heat transfer, temperature gradients, and transformations between phases.",
+              "details": [],
+              "example": "ex-068",
+              "order": 5
+            },
+            {
+              "id": "force-fields-particles",
+              "title": "Force Fields & Particles",
+              "description": "Motion and structure shaped by force fields, which can be electromagnetic-based, wind or abstract ones. The gravitational field is not included in this category and is classified in “Statics & Dynamics”.",
+              "details": [],
+              "example": "ex-080",
+              "order": 6
+            },
+            {
+              "id": "waves-oscillations",
+              "title": "Waves & Oscillations",
+              "description": "Repeating disturbances over time, either traveling through space (waves) or cycling in place (oscillations).",
+              "details": [],
+              "example": "ex-088",
+              "order": 7
+            },
+            {
+              "id": "optics",
+              "title": "Optics",
+              "description": "Effects arising from light–matter interaction and light transport.",
+              "details": [],
+              "order": 8
+            },
+            {
+              "id": "weathering",
+              "title": "Weathering",
+              "description": "Long-term alteration of surfaces and structures by environmental exposure and mechanical/chemical processes.",
+              "details": [],
+              "example": "ex-038",
+              "order": 9
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
