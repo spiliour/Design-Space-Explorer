@@ -649,6 +649,7 @@
               "title": "Fluids",
               "description": "Phenomena related to liquid and gaseous flows, including diffusion and mixing phenomena.",
               "details": [],
+              "video": "videos/fluids.gif",
               "example": "ex-069",
               "order": 3
             },

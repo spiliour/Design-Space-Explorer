@@ -108,16 +108,19 @@ function FlippableCard({
   categoryIcon,
   dimensionColor,
   isPhysicalAttribute,
+  isMechanism,
   corpusById,
 }: {
   card: DimensionCard;
   categoryIcon?: string;
   dimensionColor: string;
   isPhysicalAttribute?: boolean;
+  isMechanism?: boolean;
   corpusById: Map<string, CorpusItem>;
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [showVideo, setShowVideo] = useState(false);
+  // For mechanisms, show video/gif by default
+  const [showVideo, setShowVideo] = useState(isMechanism ? true : false);
 
   const imageSrc = resolveAsset(card.image) ?? PLACEHOLDER_IMG;
   const videoSrc = resolveAsset(card.video);
@@ -632,6 +635,7 @@ export function DesignSpacePage() {
                       categoryIcon={dimension.categoryIcon}
                       dimensionColor={dimension.color}
                       isPhysicalAttribute={dimension.category === "Physical Attributes"}
+                      isMechanism={dimension.category === "Physical Mechanisms"}
                       corpusById={corpusById}
                     />
                   ))}
