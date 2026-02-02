@@ -66,6 +66,23 @@ const normalizeTags = (tags?: string[] | string): string[] => {
 
 const uniq = (arr: string[]) => Array.from(new Set(arr));
 
+// Normalize perceptual realism values to match filter options
+const normalizePerceptualRealism = (value?: string): string | undefined => {
+  if (!value) return undefined;
+  const trimmed = value.trim();
+  const lower = trimmed.toLowerCase();
+  // Convert "Very High" (any case) to "Indistinguishable from Reality"
+  if (lower === "very high" || lower === "very high realism") {
+    return "Indistinguishable from Reality";
+  }
+  // If it already ends with "Realism" or is "Indistinguishable from Reality", keep as-is
+  if (trimmed.endsWith("Realism") || trimmed === "Indistinguishable from Reality") {
+    return trimmed;
+  }
+  // Otherwise, append " Realism"
+  return `${trimmed} Realism`;
+};
+
 const corpusItems: CorpusItem[] = (corpusData as CorpusJsonRow[]).map((row, index) => {
   // Normalize each field separately
   const encodingsList = normalizeTags(row.encodings);
@@ -79,7 +96,7 @@ const corpusItems: CorpusItem[] = (corpusData as CorpusJsonRow[]).map((row, inde
     image: row.image ? String(row.image).replace(/^\/+/, "") : undefined,
     method_of_making: row.method_of_making,
     animation: row.animation,
-    perceptual_realism: row.perceptual_realism,
+    perceptual_realism: normalizePerceptualRealism(row.perceptual_realism),
     encodings: encodingsList,
     contextual: contextualList,
     mechanisms: mechanismsList,
@@ -176,7 +193,7 @@ export function CorpusPage() {
     : corpusItems.filter(item => {
         // Categorize selected tags
         const selectedMethodOfMaking = selectedTags.filter(tag =>
-          ["3D", "Photo of Physicalization", "Graphic Design / Illustration"].includes(tag)
+          ["3D render", "Photograph of physical artefact", "Graphic design - Illustration"].includes(tag)
         );
         const selectedAnimation = selectedTags.filter(tag =>
           ["Static", "Dynamic"].includes(tag)

@@ -2,7 +2,7 @@
   {
     "type": "inline",
     "name": "Method of Making",
-    "options": ["3D", "Photo of Physicalization", "Graphic Design / Illustration"]
+    "options": ["3D render", "Photograph of physical artefact", "Graphic design - Illustration"]
   },
   {
     "type": "inline",
@@ -32,15 +32,15 @@
       },
       {
         "name": "Structural Attributes",
-        "options": ["Stretching", "Twist", "Break / Shatter"]
+        "options": ["Stretch", "Twist", "Fold / Unfold", "Segment / Cut", "Compress", "Inflate / Deflate", "Bend", "Break / Shatter", "Shrink"]
       },
       {
         "name": "Groups and Populations",
-        "options": ["Count", "Density", "Spatial Arrangement"]
+        "options": ["Count", "Density", "Spatial Arrangement - Alignment", "Spatial Arrangement - Stacking", "Spatial Arrangement - Packing", "Spatial Arrangement - Geographical", "Spatial Arrangement - Concentration", "Spatial Arrangement - Geographical", "Spatial Arrangement - Concentration", "Spatial Arrangement - Scattering", "Spatial Arrangement - Path"]
       },
       {
         "name": "Framing Attributes",
-        "options": ["Lighting", "Camera", "Environment"]
+        "options": ["Lighting", "Camera", "Environment / Background"]
       },
       {
         "name": "Time Attributes",
@@ -54,11 +54,11 @@
     "subcategories": [
       {
         "name": "Biological Mechanisms",
-        "options": ["Growth", "Decay", "Living Movement", "Infection", "Self-Organization & Patterns", "Life-Cycle Events"]
+        "options": ["Growth", "Decay", "Living Movement", "Infection", "Respiration & Rhythms","Self-organization & Patterns", "Life-Cycle Events"]
       },
       {
         "name": "Physics & Chemical Mechanisms",
-        "options": ["Rigid-Body Mechanics", "Deformable Solid Mechanics", "Fluids", "Burning & Smoke", "Thermodynamics", "Force Fields & Particles", "Waves & Oscillations", "Optics", "Weathering"]
+        "options": ["Rigid-Body Mechanics", "Deformable Solid Mechanics", "Fluids", "Burning & Fire", "State Change", "Force Fields & Particles", "Wind", "Waves & Oscillations", "Optics", "Weathering","Beyond-Physics"]
       }
     ]
   }

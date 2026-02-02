@@ -8,6 +8,7 @@
         {
           "id": "element-type",
           "label": "Element Type",
+          "description": "The type of the visual element.",
           "color": "#f06951",
           "icon": "icons/element.png",
           "order": 1,
@@ -15,12 +16,8 @@
             {
               "id": "mark",
               "title": "Mark",
-              "description": "An atomic element that supports data encodings. It can do so directly, when its own visual properties map to data.",
-              "details": [
-                "Supports data encodings directly or indirectly",
-                "Functions as a unit within a Collection",
-                "Data mapping occurs at mark or collection level"
-              ],
+              "description": "An atomic element that supports data encodings. It can do so directly, when its own visual properties map to data. It can also do so indirectly, when it functions as a unit within a Collection and the data mapping occurs at the collection level.",
+              "details": [],
               "example": "ex-013",
               "order": 1
             },
@@ -28,59 +25,39 @@
               "id": "collection",
               "title": "Collection",
               "description": "A meaningful grouping of marks or collections that encodes data.",
-              "details": [
-                "Groups marks or other collections",
-                "The grouping itself encodes data",
-                "Creates hierarchical structures"
-              ],
+              "details": [],
               "example": "ex-005",
               "order": 2
             },
             {
               "id": "annotation",
               "title": "Annotation",
-              "description": "A non-encoding element that explicitly attaches to a target to explain, emphasize, or direct attention.",
-              "details": [
-                "Attaches to marks, collections, or guides",
-                "Non-encoding element",
-                "Can be shapes, highlights, or images"
-              ],
+              "description": "A non-encoding element that explicitly attaches to a target (mark, collection, guide, or other chart component) to explain, emphasize, or direct attention to it. It can take the form of a shape, highlight, or image.",
+              "details": [],
               "example": "ex-084",
               "order": 3
             },
             {
               "id": "guide",
               "title": "Guide",
-              "description": "A non-encoding element that supports interpretation of the scale of the encodings.",
-              "details": [
-                "Axes, legends, or anchor elements",
-                "Provides reference by comparison",
-                "Supports scale interpretation"
-              ],
+              "description": "A non-encoding element that supports interpretation of the scale of the encodings. It can be an axis, a legend, or an anchor element that provides reference by comparison.",
+              "details": [],
               "example": "ex-010",
               "order": 4
             },
             {
               "id": "decoration",
               "title": "Decoration",
-              "description": "A non-encoding element that supports interpretation of the context of the dataset or message.",
-              "details": [
-                "Supports context and message",
-                "Can be removed without affecting data reading"
-              ],
+              "description": "A non-encoding element that supports interpretation of the context of the dataset or the message of the visualization. It is neither an information nor a reference object and could be removed without affecting the interpretation of the representation and scale of the encodings. In contrast to an annotation, a decoration doesn’t attach to a target element.",
+              "details": [],
               "example": "ex-015",
               "order": 5
             },
             {
               "id": "scene",
               "title": "Scene",
-              "description": "An atomic element that supports data encodings. It can do so directly, when its own visual properties map to data.",
-              "details": [
-                "Supports data encodings directly or indirectly",
-                "Functions as a unit within a Collection",
-                "Functions as a unit within a Collection",
-                "Data mapping occurs at mark or collection level"
-              ],
+              "description": "A non-encoding element with the purpose of providing the “framing” for the other elements in the visualization. It often includes aspects of environment, background, point of view and lighting.",
+              "details": [],
               "example": "ex-081",
               "order": 6
             }
@@ -89,6 +66,7 @@
         {
           "id": "element-hierarchy",
           "label": "Element Hierarchy",
+          "description": "The element’s structural level within the visualization’s composition, based on what it belongs to. Levels increase as you move from individual items to nested groups.",
           "color": "#f06951",
           "icon": "icons/hierarchy.png",
           "order": 2,
@@ -142,6 +120,7 @@
         {
           "id": "metaphorical-proximity-to-data",
           "label": "Metaphorical Proximity to Data",
+          "description": "Degree to which the physically-inspired representation is semantically related to the associated data variables or theme. Indexical mappings are closest, symbolic are furthest, and iconic fall in between.",
           "color": "#f06952",
           "icon": "icons/data.png",
           "order": 3,
@@ -149,7 +128,7 @@
             {
               "id": "low-proximity-symbolic",
               "title": "Low Proximity (Symbolic)",
-              "description": "The visual element does not resemble the associated data/theme, the connection must be learned from conventions.",
+              "description": "The visual element does not resemble the associated data/theme, the connection between them must be learned from conventions.",
               "details": [
                 "No resemblance to data",
                 "Requires learned conventions",
@@ -184,6 +163,7 @@
         {
           "id": "metaphorical-proximity-to-reality",
           "label": "Metaphorical Proximity to Reality",
+          "description": "Degree to which the metaphor matches audiences’ real-world knowledge and experience. It corresponds to the level of familiarity with the mental image and perceptual affordances conveyed by the visual element.",
           "color": "#f06953",
           "icon": "icons/reality.png",
           "order": 4,
@@ -232,6 +212,7 @@
         {
           "id": "spatial-attributes",
           "label": "Spatial Attirbutes",
+          "description": "Positional or geometric traits of an object.",
           "color": "#3f4adb",
           "icon": "icons/spatial.png",
           "order": 1,
@@ -242,7 +223,7 @@
               "description": "The object's location within the composition.",
               "details": [],
               "image": "design_space_static/position.png",
-              "example": "ex-002",
+              "example": "ex-007",
               "order": 1
             },
             {
@@ -268,6 +249,7 @@
         {
           "id": "geometry-attributes",
           "label": "Geometry Attributes",
+          "description": "Attributes relating to the overall shape or surface details of a geometry.",
           "color": "#3f4adb",
           "icon": "icons/geometry.png",
           "order": 2,
@@ -278,7 +260,7 @@
               "description": "The geometry's overall shape. It can be a recognizable shape (e.g. a star or a hand) or an abstract one.",
               "details": [],
               "image": "design_space_static/shape.png",
-              "example": "ex-004",
+              "example": "ex-002",
               "order": 1
             },
             {
@@ -295,6 +277,7 @@
         {
           "id": "material-attributes",
           "label": "Material Attributes",
+          "description": "Attributes referring to the substance an object appears to be made of.",
           "color": "#3f4adb",
           "icon": "icons/material.png",
           "order": 3,
@@ -314,7 +297,7 @@
               "description": "From isolated material changes to complex changes that communicate physical processes.",
               "details": [],
               "image": "design_space_static/transformations.png",
-              "example": "ex-001",
+              "example": "ex-043",
               "order": 2
             }
           ]
@@ -322,6 +305,7 @@
         {
           "id": "structural-attributes",
           "label": "Structural Attributes",
+          "description": "Deformations or physical manipulations that affect an object’s form. Those deformations can be associated with the material state of an object. The change of form can arise from both implied external stimuli (e.g., a force deforming an object) or living mechanisms (e.g. the growth of a tree).",
           "color": "#3f4adb",
           "icon": "icons/structural.png",
           "order": 4,
@@ -349,6 +333,7 @@
               "description": "Fragmentation into separate pieces.",
               "details": [],
               "image": "design_space_static/breaking.png",
+              "example": "ex-030",
               "order": 3
             },
             {
@@ -377,6 +362,7 @@
         {
           "id": "groups-and-populations",
           "label": "Groups & Populations",
+          "description": "Patterns of repetition, accumulation, or dispersion of multiple objects.",
           "color": "#3f4adb",
           "icon": "icons/populations.png",
           "order": 5,
@@ -403,7 +389,7 @@
               "description": "The spatial arrangement or topological patterns applied to objects inside the population.",
               "details": [],
               "image": "design_space_static/arrangement.png",
-              "example": "ex-006",
+              "example": "ex-024",
               "order": 3
             }
           ]
@@ -411,6 +397,7 @@
         {
           "id": "framing-attributes",
           "label": "Framing Attributes",
+          "description": "Cinematic, compositional and presentation elements.",
           "color": "#3f4adb",
           "icon": "icons/framing.png",
           "order": 6,
@@ -486,6 +473,7 @@
         {
           "id": "attribute-function",
           "label": "Attribute Function",
+          "description": "The attribute function specifies the primary role a physical attribute plays in the visualization.",
           "color": "#d494ff",
           "icon": "icons/function.png",
           "order": 1,
@@ -532,6 +520,7 @@
         {
           "id": "semantic-congruence",
           "label": "Semantic Congruence",
+          "description": "Degree to which an encoding’s perceived meaning directly conveys the encoded data variable. It is low when the mapping is immediately interpretable and high when it is arbitrary or requires substantial inference.",
           "color": "#d494ff",
           "icon": "icons/congruence.png",
           "order": 3,
@@ -568,6 +557,7 @@
         {
           "id": "biological-mechanisms",
           "label": "Biological Mechanisms",
+          "description": "The attribute appears to arise from living bodies or biological processes.",
           "color": "#436d41",
           "icon": "icons/biological.png",
           "order": 1,
@@ -617,7 +607,7 @@
               "title": "Self-Organization & Patterns",
               "description": "Pattern formation or coordinated behavior arising from local interactions among many simple units, without centralized control. Examples: flocking / swarming, Turing patterns, phyllotaxis packing.",
               "details": [],
-              "example": "ex-071",
+              "example": "ex-056",
               "order": 6
             },
             {
@@ -633,6 +623,7 @@
         {
           "id": "physics-chemical-mechanisms",
           "label": "Physics & Chemical Mechanisms",
+          "description": "The attribute appears to be produced by physics or chemical phenomena.",
           "color": "#436d41",
           "icon": "icons/physics.png",
           "order": 2,
@@ -681,7 +672,7 @@
               "title": "Force Fields & Particles",
               "description": "Motion and structure shaped by force fields, which can be electromagnetic-based, wind or abstract ones. The gravitational field is not included in this category and is classified in “Statics & Dynamics”.",
               "details": [],
-              "example": "ex-080",
+              "example": "ex-081",
               "order": 6
             },
             {
@@ -697,6 +688,7 @@
               "title": "Optics",
               "description": "Effects arising from light–matter interaction and light transport.",
               "details": [],
+              "example": "ex-086",
               "order": 8
             },
             {

@@ -18,6 +18,7 @@ type DesignSpaceJson = {
     dimensions: Array<{
       id: string;
       label: string;
+      description?: string;
       color?: string;
       icon?: string;
       order?: number;
@@ -56,6 +57,7 @@ interface DimensionCard {
 interface Dimension {
   id: string;
   label: string;
+  description?: string;
   category: string;
   color: string;
   cards: DimensionCard[];
@@ -420,6 +422,7 @@ export function DesignSpacePage() {
         out.push({
           id: d.id,
           label: d.label,
+          description: d.description,
           category: cat.category,
           color: d.color ?? "#94a3b8",
           categoryIcon: resolveAsset(d.icon),
@@ -608,9 +611,11 @@ export function DesignSpacePage() {
                     />
                     <h1 className="text-3xl">{dimension.label}</h1>
                   </div>
-                  <p className="text-muted-foreground text-sm">
-                    {dimension.category}
-                  </p>
+                  {dimension.description && (
+                    <p className="text-muted-foreground text-sm">
+                      {dimension.description}
+                    </p>
+                  )}
                 </div>
 
                 <div

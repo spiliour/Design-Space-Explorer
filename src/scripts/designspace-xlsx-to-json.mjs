@@ -103,6 +103,7 @@ function main() {
     dimensions.push({
       id,
       label: cleanStr(r.label) ?? id,
+      description: cleanStr(r.description) ?? null,
       category: cleanStr(r.category) ?? "Uncategorized",
       color: cleanStr(r.color_hex) ?? null,
       icon: normalizePath(r.category_icon) ?? null,
@@ -172,6 +173,7 @@ function main() {
     const dimsOut = dimList.map(d => ({
       id: d.id,
       label: d.label,
+      description: d.description ?? undefined,
       color: d.color ?? undefined,
       icon: d.icon ?? undefined,
       order: d.order ?? 999,
