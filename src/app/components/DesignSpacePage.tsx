@@ -217,11 +217,13 @@ function FlippableCard({
                       e.preventDefault();
                       setIsZooming(true);
                     }}
-                    onMouseEnter={() => isMechanism && setIsHovering(true)}
-                    onMouseLeave={() => isMechanism && setIsHovering(false)}
+                    // Hover-to-play for mechanisms (commented out - now autoplay)
+                    // onMouseEnter={() => isMechanism && setIsHovering(true)}
+                    // onMouseLeave={() => isMechanism && setIsHovering(false)}
                   >
                     {/* For mechanisms: show GIF only on hover. For others: use toggle state */}
-                    {(isMechanism ? isHovering : showVideo) && videoSrc ? (
+                    {/* Original: (isMechanism ? isHovering : showVideo) */}
+                    {(isMechanism ? true : showVideo) && videoSrc ? (
                       <img
                         src={videoSrc}
                         alt={`${card.title} animation`}
