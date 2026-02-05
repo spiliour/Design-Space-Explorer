@@ -6,7 +6,7 @@ interface NavigationProps {
 }
 
 const tabs = [
-  // { id: "overview", label: "Overview" },
+  { id: "overview", label: "Overview" },
   { id: "design-space", label: "Design Space" },
   { id: "corpus", label: "Corpus" },
   { id: "coding-interface", label: "Coding Interface" },

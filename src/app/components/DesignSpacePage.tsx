@@ -202,6 +202,15 @@ function FlippableCard({
 
               {showMedia && (
                 <div className="space-y-2">
+                  {/* Preload GIF for mechanisms so it's cached when user hovers */}
+                  {isMechanism && videoSrc && (
+                    <img
+                      src={videoSrc}
+                      alt=""
+                      className="hidden"
+                      aria-hidden="true"
+                    />
+                  )}
                   <div
                     className="rounded-lg border-2 border-border overflow-hidden bg-muted cursor-zoom-in select-none"
                     onMouseDown={(e) => {
