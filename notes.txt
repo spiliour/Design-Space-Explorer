@@ -11,3 +11,5 @@ node scripts/designspace-xlsx-to-json.mjs data/design_space.xlsx data/designspac
 
 npm run build
 npm run preview
+
+ffmpeg -i videos/fluids.gif -vframes 1 design_space_static/fluids.png

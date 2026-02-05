@@ -134,6 +134,8 @@ function main() {
       image: normalizePath(r.image) ?? null,
       video: normalizePath(r.video) ?? null,
       example: cleanStr(r.example) ?? null, // Treat as corpus ID, not a path
+      mechanism_creator: cleanStr(r.mechanism_creator) ?? null,
+      mechanism_creator_link: cleanStr(r.mechanism_creator_link) ?? null,
       order: toInt(r.order) ?? 999,
     });
 
