@@ -1,10 +1,28 @@
-import { useState, useRef, useEffect } from "react";
-
 // BASE_URL-safe helper (works on GitHub Pages subpaths)
 const withBase = (relPath: string) => {
   const base = (import.meta as unknown as { env: { BASE_URL?: string } }).env?.BASE_URL || "/";
   return `${base.replace(/\/+$/, "/")}${relPath.replace(/^\/+/, "")}`;
 };
+
+export function OverviewPage() {
+  return (
+    <div className="h-[calc(100vh-65px)] p-8 overflow-auto flex items-center justify-center">
+      <img
+        src={withBase("resources/design space.png")}
+        alt="Design Space"
+        className="max-w-full h-auto"
+        style={{ maxHeight: "calc(100vh - 130px)" }}
+      />
+    </div>
+  );
+}
+
+/*
+// ============================================================
+// ORIGINAL OVERVIEW PAGE (commented out)
+// ============================================================
+
+import { useState, useRef, useEffect } from "react";
 
 // Dummy element data with more complex curved shapes
 // Using SVG path commands: M=move, L=line, Q=quadratic curve, C=cubic curve
@@ -13,7 +31,6 @@ const DUMMY_ELEMENTS = [
     id: "element-1",
     name: "Primary Mark",
     type: "Mark",
-    // Curved blob shape using quadratic beziers
     path: "M 15 20 Q 12 25 15 32 Q 18 38 25 35 Q 32 32 30 25 Q 28 18 22 18 Q 16 18 15 20 Z",
     center: { x: 22, y: 26 },
     attributes: {
@@ -29,7 +46,6 @@ const DUMMY_ELEMENTS = [
     id: "element-2",
     name: "Data Collection",
     type: "Collection",
-    // Organic blob shape
     path: "M 38 22 Q 35 18 42 16 Q 52 14 55 22 Q 58 30 52 38 Q 46 44 40 40 Q 34 36 36 28 Q 37 24 38 22 Z",
     center: { x: 46, y: 28 },
     attributes: {
@@ -45,7 +61,6 @@ const DUMMY_ELEMENTS = [
     id: "element-3",
     name: "Annotation Label",
     type: "Annotation",
-    // Rounded rectangle-ish shape
     path: "M 65 12 Q 62 12 62 15 L 62 22 Q 62 25 65 25 L 82 25 Q 85 25 85 22 L 85 15 Q 85 12 82 12 Z",
     center: { x: 73, y: 18 },
     attributes: {
@@ -61,7 +76,6 @@ const DUMMY_ELEMENTS = [
     id: "element-4",
     name: "Secondary Mark",
     type: "Mark",
-    // Irregular curved shape
     path: "M 70 35 C 65 32 68 28 75 30 C 82 32 88 35 85 42 C 82 50 78 52 72 48 C 66 44 68 38 70 35 Z",
     center: { x: 76, y: 40 },
     attributes: {
@@ -77,7 +91,6 @@ const DUMMY_ELEMENTS = [
     id: "element-5",
     name: "Guide Element",
     type: "Guide",
-    // Wavy shape
     path: "M 8 52 Q 12 48 18 52 Q 24 56 22 62 Q 20 68 14 68 Q 8 68 6 62 Q 4 56 8 52 Z",
     center: { x: 14, y: 60 },
     attributes: {
@@ -93,7 +106,6 @@ const DUMMY_ELEMENTS = [
     id: "element-6",
     name: "Environment",
     type: "Scene",
-    // Large organic background shape
     path: "M 32 58 Q 28 55 35 52 Q 45 48 55 52 Q 62 56 58 65 Q 54 75 45 78 Q 36 80 32 72 Q 28 64 32 58 Z",
     center: { x: 45, y: 65 },
     attributes: {
@@ -109,7 +121,6 @@ const DUMMY_ELEMENTS = [
     id: "element-7",
     name: "Decoration",
     type: "Decoration",
-    // Small curved decoration
     path: "M 75 62 Q 72 58 78 56 Q 88 54 92 62 Q 95 70 88 76 Q 80 82 75 76 Q 70 70 75 62 Z",
     center: { x: 82, y: 68 },
     attributes: {
@@ -131,16 +142,12 @@ export function OverviewPage() {
   const [bubblePosition, setBubblePosition] = useState<{ x: number; y: number } | null>(null);
   const imageContainerRef = useRef<HTMLDivElement>(null);
 
-  // Calculate bubble position when element is selected
   useEffect(() => {
     if (selectedElement && imageContainerRef.current) {
       const container = imageContainerRef.current;
       const rect = container.getBoundingClientRect();
-
-      // Convert element center (0-100 scale) to pixel position
       const x = (selectedElement.center.x / 100) * rect.width;
       const y = (selectedElement.center.y / 100) * rect.height;
-
       setBubblePosition({ x, y });
     } else {
       setBubblePosition(null);
@@ -164,9 +171,7 @@ export function OverviewPage() {
         </p>
       </div>
 
-      {/* Image container with overlay */}
       <div className="relative inline-block" ref={imageContainerRef}>
-        {/* The visualization image */}
         <img
           src={withBase("demonstration/demo-01.png")}
           alt="Demonstration visualization"
@@ -174,7 +179,6 @@ export function OverviewPage() {
           style={{ maxHeight: "70vh" }}
         />
 
-        {/* SVG overlay for interactive regions */}
         <svg
           className="absolute inset-0 w-full h-full pointer-events-none"
           viewBox="0 0 100 100"
@@ -213,7 +217,6 @@ export function OverviewPage() {
           ))}
         </svg>
 
-        {/* Floating bubble panel */}
         {selectedElement && bubblePosition && (
           <div
             className="absolute z-50 pointer-events-auto"
@@ -225,7 +228,6 @@ export function OverviewPage() {
                 : "translate(10%, -50%)",
             }}
           >
-            {/* Arrow pointing to element */}
             <div
               className="absolute w-0 h-0"
               style={{
@@ -247,9 +249,7 @@ export function OverviewPage() {
               }}
             />
 
-            {/* Bubble content */}
             <div className="bg-white rounded-xl shadow-2xl border border-gray-200 p-4 w-72 max-h-96 overflow-auto">
-              {/* Close button */}
               <button
                 onClick={() => setSelectedElement(null)}
                 className="absolute top-2 right-2 text-gray-400 hover:text-gray-600 text-lg leading-none"
@@ -257,7 +257,6 @@ export function OverviewPage() {
                 ×
               </button>
 
-              {/* Element name and type */}
               <div className="mb-3 pr-4">
                 <h3 className="text-lg font-bold text-gray-900">{selectedElement.name}</h3>
                 <span className="inline-block px-2 py-0.5 text-xs rounded-full bg-blue-100 text-blue-700">
@@ -265,55 +264,41 @@ export function OverviewPage() {
                 </span>
               </div>
 
-              {/* Attributes */}
               <div className="space-y-2 text-sm">
                 <div>
                   <span className="text-xs text-gray-500">Visual Element Type</span>
                   <p className="font-medium text-gray-800">{selectedElement.attributes.visualElement}</p>
                 </div>
-
                 <div>
                   <span className="text-xs text-gray-500">Hierarchy Level</span>
                   <p className="font-medium text-gray-800">{selectedElement.attributes.hierarchy}</p>
                 </div>
-
                 <div>
                   <span className="text-xs text-gray-500">Proximity to Data</span>
                   <p className="font-medium text-gray-800">{selectedElement.attributes.proximityToData}</p>
                 </div>
-
                 <div>
                   <span className="text-xs text-gray-500">Proximity to Reality</span>
                   <p className="font-medium text-gray-800">{selectedElement.attributes.proximityToReality}</p>
                 </div>
-
-                {/* Encodings */}
                 {selectedElement.attributes.encodings.length > 0 && (
                   <div>
                     <span className="text-xs text-gray-500">Data Encodings</span>
                     <div className="flex flex-wrap gap-1 mt-1">
                       {selectedElement.attributes.encodings.map((encoding) => (
-                        <span
-                          key={encoding}
-                          className="px-2 py-0.5 text-xs rounded bg-green-100 text-green-700"
-                        >
+                        <span key={encoding} className="px-2 py-0.5 text-xs rounded bg-green-100 text-green-700">
                           {encoding}
                         </span>
                       ))}
                     </div>
                   </div>
                 )}
-
-                {/* Mechanisms */}
                 {selectedElement.attributes.mechanisms.length > 0 && (
                   <div>
                     <span className="text-xs text-gray-500">Physical Mechanisms</span>
                     <div className="flex flex-wrap gap-1 mt-1">
                       {selectedElement.attributes.mechanisms.map((mechanism) => (
-                        <span
-                          key={mechanism}
-                          className="px-2 py-0.5 text-xs rounded bg-purple-100 text-purple-700"
-                        >
+                        <span key={mechanism} className="px-2 py-0.5 text-xs rounded bg-purple-100 text-purple-700">
                           {mechanism}
                         </span>
                       ))}
@@ -326,7 +311,6 @@ export function OverviewPage() {
         )}
       </div>
 
-      {/* Legend / Element list */}
       <div className="mt-6">
         <h3 className="text-sm font-semibold mb-2 text-muted-foreground uppercase tracking-wider">
           Visual Elements
@@ -354,3 +338,4 @@ export function OverviewPage() {
     </div>
   );
 }
+*/

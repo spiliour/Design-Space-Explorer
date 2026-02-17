@@ -8,7 +8,7 @@ import { InspirationSetPage } from "@/app/components/InspirationSetPage";
 import { AboutPage } from "@/app/components/AboutPage";
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState("design-space");
+  const [activeTab, setActiveTab] = useState("overview");
 
   const renderPage = () => {
     switch (activeTab) {
