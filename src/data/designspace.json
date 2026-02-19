@@ -16,7 +16,7 @@
             {
               "id": "mark",
               "title": "Mark",
-              "description": "An atomic element that supports data encodings. It can do so directly, when its own visual properties map to data. It can also do so indirectly, when it functions as a unit within a Collection and the data mapping occurs at the collection level.",
+              "description": "A mark is a graphical element that represents a data point. The visual properties of the mark map to data. A mark can also indirectly support data encodings when it functions as a unit within a collection and the data mapping occurs at the collection level.",
               "details": [],
               "example": "ex-013",
               "order": 1
