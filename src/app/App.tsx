@@ -7,8 +7,13 @@ import { CodingInterfacePage } from "@/app/components/CodingInterfacePage";
 import { InspirationSetPage } from "@/app/components/InspirationSetPage";
 import { AboutPage } from "@/app/components/AboutPage";
 
+const getInitialTab = () => {
+  if (window.location.hash.startsWith("#item=")) return "corpus";
+  return "overview";
+};
+
 export default function App() {
-  const [activeTab, setActiveTab] = useState("overview");
+  const [activeTab, setActiveTab] = useState(getInitialTab);
 
   const renderPage = () => {
     switch (activeTab) {

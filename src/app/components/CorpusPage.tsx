@@ -1,6 +1,6 @@
-import { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/app/components/ui/card";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, X } from "lucide-react";
 
 import corpusData from "@/data/corpus.json";
 import filterCategoriesData from "@/data/filterCategories.json";
@@ -38,6 +38,25 @@ type CorpusItem = {
 const withBase = (relPath: string) => {
   const base = import.meta.env.BASE_URL || "/";
   return `${base.replace(/\/+$/, "/")}${relPath.replace(/^\/+/, "")}`;
+};
+
+// Coding interface — update this URL once deployed to GitHub Pages
+const CODER_BASE_URL = "https://spiliour.github.io/phys-insp-visualization-coder";
+
+// Set of corpus IDs that have a coded example in the coder tool
+const CODER_IDS = new Set([
+  "007","008","012","013","014","015","016","017","018","019",
+  "020","021","022","023","024","025","027","028","029","030",
+  "032","033","038","039","041","043","044","047","048","049",
+  "051","052","053","055","056","057","059","060","064","066",
+  "067","068","069","070","071","072","073","074","075","076",
+  "082","083","084","086","087","088","089","090","091",
+]);
+
+// Derive the coder numeric ID from a corpus item ID (e.g. "ex-007" → "007")
+const getCoderUrl = (itemId: string | number): string | null => {
+  const numeric = String(itemId).replace(/^ex-/, "");
+  return CODER_IDS.has(numeric) ? `${CODER_BASE_URL}/?example=${numeric}` : null;
 };
 
 // Inline SVG placeholder (no extra file needed)
@@ -131,6 +150,48 @@ const filterCategories: FilterCategory[] = filterCategoriesData as FilterCategor
 export function CorpusPage() {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
+  const [modalItem, setModalItem] = useState<CorpusItem | null>(() => {
+    const hash = window.location.hash;
+    if (hash.startsWith("#item=")) {
+      const id = decodeURIComponent(hash.slice(6));
+      return corpusItems.find(item => String(item.id) === id) ?? null;
+    }
+    return null;
+  });
+
+  const openModal = useCallback((item: CorpusItem) => {
+    setModalItem(item);
+    window.location.hash = `item=${encodeURIComponent(String(item.id))}`;
+  }, []);
+
+  const closeModal = useCallback(() => {
+    setModalItem(null);
+    history.pushState(null, "", window.location.pathname + window.location.search);
+  }, []);
+
+  // Sync hash → modal (e.g. browser back/forward)
+  useEffect(() => {
+    const onHashChange = () => {
+      const hash = window.location.hash;
+      if (hash.startsWith("#item=")) {
+        const id = decodeURIComponent(hash.slice(6));
+        const found = corpusItems.find(item => String(item.id) === id) ?? null;
+        setModalItem(found);
+      } else {
+        setModalItem(null);
+      }
+    };
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
+
+  // Close modal on Escape key
+  useEffect(() => {
+    if (!modalItem) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") closeModal(); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [modalItem, closeModal]);
 
   const toggleTag = (tag: string) => {
     if (selectedTags.includes(tag)) {
@@ -395,7 +456,11 @@ export function CorpusPage() {
           return (
             <Card
               key={item.id}
-              className="hover:border-foreground transition-colors flex flex-col shadow-md"
+              onClick={(e: React.MouseEvent) => {
+                if ((e.target as HTMLElement).closest("[data-no-modal]")) return;
+                openModal(item);
+              }}
+              className="hover:border-foreground transition-colors flex flex-col shadow-md cursor-pointer"
             >
               <CardHeader>
                 <div className="aspect-[4/3] bg-muted rounded mb-4 flex items-center justify-center text-muted-foreground text-sm overflow-hidden">
@@ -414,7 +479,7 @@ export function CorpusPage() {
               </CardHeader>
 
               <CardContent className="flex-1 flex flex-col">
-                <div className="flex-1 space-y-3 mb-4">
+                <div className="flex-1 space-y-3 mb-4" data-no-modal>
                   {/* First row: Method of Making - Animation - Perceptual Realism */}
                   <div className="flex flex-wrap gap-2">
                     {item.method_of_making && (
@@ -505,7 +570,7 @@ export function CorpusPage() {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex gap-2 mt-auto">
+                <div className="flex gap-2 mt-auto" data-no-modal>
                   {item.link && (
                     <button
                       onClick={() => window.open(item.link!, "_blank", "noopener,noreferrer")}
@@ -514,11 +579,14 @@ export function CorpusPage() {
                       <span>🔗</span> Link
                     </button>
                   )}
-                  <button
-                    className="flex-1 px-3 py-1.5 bg-zinc-950 hover:bg-zinc-800 text-white rounded text-xs font-medium transition-colors"
-                  >
-                    Open coding
-                  </button>
+                  {getCoderUrl(item.id) && (
+                    <button
+                      onClick={() => window.open(getCoderUrl(item.id)!, "_blank", "noopener,noreferrer")}
+                      className="flex-1 px-3 py-1.5 bg-zinc-950 hover:bg-zinc-800 text-white rounded text-xs font-medium transition-colors"
+                    >
+                      Open coding
+                    </button>
+                  )}
                 </div>
               </CardContent>
             </Card>
@@ -539,6 +607,63 @@ export function CorpusPage() {
           >
             Clear filters
           </button>
+        </div>
+      )}
+
+      {/* Item Modal */}
+      {modalItem && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+          onClick={closeModal}
+        >
+          <div
+            className="bg-background rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-auto"
+            onClick={(e: React.MouseEvent) => e.stopPropagation()}
+          >
+            {/* Modal header */}
+            <div className="flex items-center justify-between px-6 pt-5 pb-3 border-b border-border">
+              <h2 className="text-lg font-semibold">{modalItem.title}</h2>
+              <button
+                onClick={closeModal}
+                className="p-1.5 rounded hover:bg-muted transition-colors"
+                aria-label="Close"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Large image */}
+            <div className="px-6 pt-5">
+              <img
+                src={resolveImgSrc(modalItem.image)}
+                alt={modalItem.title}
+                className="w-full h-auto rounded-lg object-contain max-h-[60vh]"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = PLACEHOLDER_IMG;
+                }}
+              />
+            </div>
+
+            {/* Action buttons */}
+            <div className="flex gap-3 px-6 py-5">
+              {modalItem.link && (
+                <button
+                  onClick={() => window.open(modalItem.link!, "_blank", "noopener,noreferrer")}
+                  className="flex-1 px-4 py-2 bg-zinc-950 hover:bg-zinc-800 text-white rounded text-sm font-medium transition-colors flex items-center justify-center gap-2"
+                >
+                  <span>🔗</span> Link
+                </button>
+              )}
+              {getCoderUrl(modalItem.id) && (
+                <button
+                  onClick={() => window.open(getCoderUrl(modalItem.id)!, "_blank", "noopener,noreferrer")}
+                  className="flex-1 px-4 py-2 bg-zinc-950 hover:bg-zinc-800 text-white rounded text-sm font-medium transition-colors"
+                >
+                  Open coding
+                </button>
+              )}
+            </div>
+          </div>
         </div>
       )}
     </div>

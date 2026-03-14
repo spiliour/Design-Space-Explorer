@@ -18,6 +18,7 @@
               "title": "Mark",
               "description": "A mark is a graphical element that represents a data point. The visual properties of the mark map to data. A mark can also indirectly support data encodings when it functions as a unit within a collection and the data mapping occurs at the collection level.",
               "details": [],
+              "image": "design_space_static/mark.png",
               "example": "ex-013",
               "order": 1
             },
@@ -26,6 +27,7 @@
               "title": "Collection",
               "description": "A meaningful grouping of marks or collections that encodes data.",
               "details": [],
+              "image": "design_space_static/collection.png",
               "example": "ex-005",
               "order": 2
             },
@@ -42,6 +44,7 @@
               "title": "Guide",
               "description": "A non-encoding element that supports interpretation of the scale of the encodings. It can be an axis, a legend, or an anchor element that provides reference by comparison.",
               "details": [],
+              "image": "design_space_static/guide.png",
               "example": "ex-010",
               "order": 4
             },
@@ -58,6 +61,7 @@
               "title": "Scene",
               "description": "A non-encoding element with the purpose of providing the “framing” for the other elements in the visualization. It often includes aspects of environment, background, point of view and lighting.",
               "details": [],
+              "image": "design_space_static/scene.png",
               "example": "ex-081",
               "order": 6
             }
