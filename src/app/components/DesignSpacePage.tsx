@@ -397,18 +397,23 @@ function FlippableCard({
               </div>
 
               {/* Links and Back Button */}
-              <div className="pt-4 flex justify-between items-center flex-shrink-0">
-                <div className="flex items-center gap-3">
-                  {exampleLink && (
-                    <button
-                      onClick={() => openInNewTab(exampleLink)}
-                      className="text-blue-600 hover:underline text-sm flex items-center gap-1"
-                    >
-                      <span>🔗</span> URL
-                    </button>
-                  )}
-                </div>
-
+              <div className="pt-4 flex justify-end items-center gap-2 flex-shrink-0">
+                {corpusExample && (
+                  <button
+                    onClick={() =>
+                      window.open(
+                        window.location.origin +
+                          window.location.pathname +
+                          "#item=" +
+                          encodeURIComponent(String(corpusExample.id)),
+                        "_blank"
+                      )
+                    }
+                    className="px-4 py-2 bg-zinc-100 text-black rounded-full text-sm font-medium hover:bg-zinc-200 transition-colors"
+                  >
+                    Open Example ↗
+                  </button>
+                )}
                 <button
                   onClick={() => setIsFlipped(false)}
                   className="px-4 py-2 bg-yellow-400 text-black rounded-full text-sm font-medium hover:bg-yellow-500 transition-colors"
